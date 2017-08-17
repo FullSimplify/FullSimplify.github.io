@@ -79,11 +79,11 @@ plt.show()
 ```
 
 
-![png](SVM_files/SVM_1_0.png?raw=true)
+![png](./SVM_files/SVM_1_0.png?raw=true)
 
 
 
-![png](SVM_files/SVM_1_1.png?raw=true)
+![png](./SVM_files/SVM_1_1.png?raw=true)
 
 
 ## A Few Mathematical Details
