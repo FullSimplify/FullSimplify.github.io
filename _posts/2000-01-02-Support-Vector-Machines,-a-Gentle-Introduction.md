@@ -7,6 +7,7 @@ subtitle:
 date: 2015-01-20 12:09:42
 categories: 
 ---
+{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
 In a classification problem we want to classify or label a new observation, having trained our model with a set of observations whose class is known. One approach is to think that all elements that belong to the same class are *similar* in some way. We thus need a concept of similarity or *distance*.
 
 For example, if we had a box of apples and we wanted to classify based on color, we would like our model to take the apples as input, the new observation being taking an apple from the box and checking its color, and give us its label as output. For example, **1** could be *red apple*, and **0** could be *green apple*. We then have two classes, 1 and 0. Some apples though, are not entirely red or green, and it's hard to say if they should be labeled 1 or 0. Here's where the concept of distance comes to help. Simply speaking, if the apple is sufficiently green, or more green than red, our model should label it as 0.
