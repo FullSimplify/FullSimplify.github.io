@@ -97,7 +97,7 @@ There is plenty of material on books and internet about the background theory. I
 
 Let's consider a bounded functional over the Hilbert space $$\mathcal{H}$$ of functions $$f$$, that is,  $$\mathcal{L}_x:f \rightarrow f(x)$$. In practice $$\mathcal{T}$$ evaluates the function at point $$x$$. If the evaluation is bounded, then $$\mathcal{H}$$ is a reproducing kernel Hilbert space (RKHS) by definition. Thanks to Riesz theorem , such functional can be represented in a unique way, that is, $$\forall f \in \mathcal{H}$$ there is a unique $$\kappa_x \in \mathcal{H}$$ such that  $$\mathcal{L}[f]=\langle f,\kappa_x\rangle_H=f(x)$$, where the brackets represent the inner product in $$\mathcal{H}$$. Such $$\kappa_x$$ is the **reproducing kernel** of the Hilbert space $$\mathcal{H}$$. It is called reproducing kernel because of the property of "reproducing" $$f$$ evaluated at $$x$$.
 
-Here we are really exploiting the power of Reisz theorem which allows us to reproduce "$$f$$ evaluated at $$x$$, $$f(x)$$", with a unique "rule" (or in a unique way), that is, which is an inner product. TO make a step further we can say that the RKHS is the closure of $$\mathcal{H}$$ in the norm induced by such inner product.
+Here we are really exploiting the power of Reisz theorem which allows us to reproduce "$$f$$ evaluated at $$x$$, $$f(x)$$", with a unique "rule" (or in a unique way), that is, which is an inner product. To make a step further we can say that the RKHS is the closure of $$\mathcal{H}$$ in the norm induced by such inner product.
 
 As mentioned above,  $$\kappa_x \in \mathcal{H}$$ for $$x \in \mathcal{X}$$. If we take $$f=\kappa_y \in \mathcal{H}$$ we can write
 \begin{equation}
