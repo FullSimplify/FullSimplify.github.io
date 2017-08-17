@@ -11,7 +11,7 @@ sitemap:
         <li class="post-teaser">
             <a href="{{ post.url | prepend: site.baseurl }}">
                 <span class="post-teaser__title">{{ post.title }}</span>
-                <h3>{{ post.excerpt }}</h3>
+                <h3 id='excerpt'>{{ post.excerpt }}</h3>
                 <!--<span class="post-teaser__date">{{ post.date | date: "%d %B %Y" }}</span>-->
             </a>
         </li>
