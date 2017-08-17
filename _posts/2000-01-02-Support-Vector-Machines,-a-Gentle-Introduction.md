@@ -265,5 +265,3 @@ dataset = np.hstack((x.reshape(-1,1),y.reshape(-1,1)))
 
 ![png](SVM_files/SVM_5_0.png)
 
-
-###### (Author: Gabriele Costanza)
