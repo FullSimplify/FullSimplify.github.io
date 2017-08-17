@@ -12,9 +12,10 @@ sitemap:
             <a href="{{ post.url | prepend: site.baseurl }}">
                 <span class="post-teaser__title">{{ post.title }}</span>                
                 <!--<span class="post-teaser__date">{{ post.date | date: "%d %B %Y" }}</span>-->
+              <p id='post-teaser-subtitle'>{{ post.excerpt }}</p> 
             </a>
         </li>
-    <p id='post-teaser-subtitle'>{{ post.excerpt }}</p>  
+    
   <p id='post-divider' style="border-bottom: 1px solid;">
   </p>
     {% endfor %}
