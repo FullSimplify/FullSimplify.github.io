@@ -20,11 +20,11 @@ In general, rather than apples we have objects $$x$$, belonging to a space $$\ma
 
 Two popular choices are the Gaussian kernel,
 \begin{equation}
-\kappa(x,x′)=exp\bigg(−\dfrac{1}{2}(x−x′)^T\,\Sigma^{−1}\,(x−x′)\bigg),
+\kappa(x,x′) = \exp\bigg(−\dfrac{1}{2}(x−x′)^T\,\Sigma^{−1}\,(x−x′)\bigg),
 \end{equation}
 and the squared exponential, radial basis function (RBF),
 \begin{equation}
-\kappa(x,x′)=exp\bigg(−\dfrac{\|x−x′\|}2{\sigma^2}\bigg).
+\kappa(x,x′) = \exp\bigg(−\dfrac{\|x−x′\|}2{\sigma^2}\bigg).
 \end{equation}
 Of course there are many different kernels for different uses. Another choice worth mentioning is the Matern Kernel.
 Notice in the last formula how the parameter $$\sigma$$ influences the smoothness of the kernel. In other words, $$\sigma$$ controls how far away points "influence" our current point. if it is large, we allow points far away from the current point to be "taken into account" (correlate). If it is small, only points close to the current point will count.
