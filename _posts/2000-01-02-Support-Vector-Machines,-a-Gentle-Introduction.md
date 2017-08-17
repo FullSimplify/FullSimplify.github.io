@@ -143,7 +143,7 @@ $$
 $$
 
 Such kernels $$\kappa$$'s are called positive definite. The elements of $$\mathbf{K}$$ can be expressed as (see <a target="_blank" href='https://en.wikipedia.org/wiki/Positive-definite_matrix#Characterizations'>here</a>)
-\egin{equation}
+\begin{equation}
 \kappa(x,y) = \Phi(x) \cdot \Phi(y),
 \end{equation}
 where $$\Phi(x)$$ is a **feature vector**.
