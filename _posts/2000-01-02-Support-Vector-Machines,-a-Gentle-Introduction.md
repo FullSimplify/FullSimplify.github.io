@@ -76,11 +76,11 @@ plt.show()
 ```
 
 
-![png](SVM_files/SVM_1_0.png)
+![png](Support-Vector-Machines-a-Gentle-Introduction/SVM_1_0.png)
 
 
 
-![png](SVM_files/SVM_1_1.png)
+![png](Support-Vector-Machines-a-Gentle-Introduction/SVM_1_1.png)
 
 
 ## A Few Mathematical Details
@@ -210,15 +210,15 @@ plt.show()
 ```
 
 
-![png](SVM_files/SVM_3_0.png)
+![png](Support-Vector-Machines-a-Gentle-Introduction/SVM_3_0.png)
 
 
 
-![png](SVM_files/SVM_3_1.png)
+![png](Support-Vector-Machines-a-Gentle-Introduction/SVM_3_1.png)
 
 
 
-![png](SVM_files/SVM_3_2.png)
+![png](Support-Vector-Machines-a-Gentle-Introduction/SVM_3_2.png)
 
 
 The same set of points is plotted in the figures above. In figure 1 we are looking at the dataset "from above". Figures 2 and 3 are the "tilted" version of figure 1, but we have added a feature, the third dimension. Now it's easy to classify points, look there is even a plane clearly dividing the set in two!
