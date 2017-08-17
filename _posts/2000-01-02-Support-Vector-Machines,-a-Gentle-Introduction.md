@@ -13,7 +13,7 @@ How does the model know what's green or red to begin with? We need to train our 
 
 ## Kernels
 
-In general, rather than apples we have objects mathcal{x}, belonging to a space $$\mathcal{X}$$. Our concept of similarity is embodied by a function $$\mathcal{X}\times\mathcal{X}\rightarrow\mathbb{R}$$ that we call Kernel Function. It is a measure of the distance between $$x$$ and $$y$$. It is natural to choose a kernel that is symmetric ( $$κ(x,y)=κ(y,x)κ(x,y)=κ(y,x)$$ ), that is, the similarity or distance between $$x$$ and $$y$$ is the same as the distance between $$y$$  and $$x$$, and non-negative ( $$κ(x,y)\geq 0$$ ), but it doesn't need be.
+In general, rather than apples we have objects x, belonging to a space $$\mathcal{X}$$. Our concept of similarity is embodied by a function $$\mathcal{X}\times\mathcal{X}\rightarrow\mathbb{R}$$ that we call Kernel Function. It is a measure of the distance between $$x$$ and $$y$$. It is natural to choose a kernel that is symmetric ( $$κ(x,y)=κ(y,x)κ(x,y)=κ(y,x)$$ ), that is, the similarity or distance between $$x$$ and $$y$$ is the same as the distance between $$y$$  and $$x$$, and non-negative ( $$κ(x,y)\geq 0$$ ), but it doesn't need be.
 
 Two popular choices are the Gaussian kernel,
 \begin{equation}
@@ -24,10 +24,10 @@ and the squared exponential, radial basis function (RBF),
 \kappa(x,x′)=exp\bigg(−\dfrac{\|x−x′\|}2{\sigma^2}\bigg).
 \end{equation}
 Of course there are many different kernels for different uses. Another choice worth mentioning is the Matern Kernel.
-Notice in the last formula how the parameter $\sigma$  influences the smoothness of the kernel. In other words, $\sigma$ controls how far away points "influence" our current point. if it is large, we allow points far away from the current point to be "taken into account" (correlate). If it is is small, only points close to the current point will count.
+Notice in the last formula how the parameter$$\sigma$$ influences the smoothness of the kernel. In other words, $$\sigma$$ controls how far away points "influence" our current point. if it is large, we allow points far away from the current point to be "taken into account" (correlate). If it is is small, only points close to the current point will count.
 
 
-Let's make an example where we draw samples from a gaussian process with the squared exponential kernel. Don't worry about the gaussian process part for now. In the first picture $\sigma=5$ an in the second  $\sigma=2$ . The difference in the smoothness of the curves is clear.
+Let's make an example where we draw samples from a gaussian process with the squared exponential kernel. Don't worry about the gaussian process part for now. In the first picture $$\sigma=5$$ an in the second  $$\sigma=2$$ . The difference in the smoothness of the curves is clear.
 
 
 ```python
@@ -84,49 +84,48 @@ plt.show()
 
 
 ## A Few Mathematical Details
-There is plenty of material on books and internet about the background theory. I'm just giving a hint to fix some concepts, after all, this is a gentle introduction. *Feel  free to skip this section* if you're more example oriented. Those really intrested in (the very intresting) theory can check the literature. I recommend the book written by <a target="_blank" href='http://www.cs.ubc.ca/~murphyk/MLbook/index.html'>Kevin P. Murphy</a>.
+There is plenty of material on books and internet about the background theory. I'm just giving a hint to fix some concepts, after all, this is a gentle introduction. *Feel free to skip this section* if you're more example oriented. Those really intrested in (the very intresting) theory can check the literature. I recommend the book written by <a target="_blank" href='http://www.cs.ubc.ca/~murphyk/MLbook/index.html'>Kevin P. Murphy</a>.
 
 ### Reproducing Kernel Hilbert Space
 
-Let's consider a bounded functional over the Hilbert space $H$ of functions $f$, that is,  $\mathcal{L}_x:f \rightarrow f(x)$. In practice $\mathcal{T}$ evaluates the function at point $x$. If the evaluation is bounded, then $\mathcal{H}$ is a reproducing kernel Hilbert space (RKHS) by definition. Thanks to Riesz theorem , such functional can be represented in a unique way, that is, $\forall f \in \mathcal{H}$ there is a unique $\kappa_x \in \mathcal{H}$ such that  $\mathcal{L}[f]=\langle f,\kappa_x\rangle_H=f(x)$, where the brackets represent the inner product in $\mathcal{H}$. Such $\kappa_x$ is the **reproducing kernel** of the Hilbert space $\mathcal{H}$. It is called reproducing kernel because of the property of "reproducing" $f$ evaluated at $x$.
+Let's consider a bounded functional over the Hilbert space $$\mathcal{H}$$ of functions $$f$$, that is,  $$\mathcal{L}_x:f \rightarrow f(x)$$. In practice $$\mathcal{T}$$ evaluates the function at point $$x$$. If the evaluation is bounded, then $$\mathcal{H}$$ is a reproducing kernel Hilbert space (RKHS) by definition. Thanks to Riesz theorem , such functional can be represented in a unique way, that is, $$\forall f \in \mathcal{H}$$ there is a unique $$\kappa_x \in \mathcal{H}$$ such that  $$\mathcal{L}[f]=\langle f,\kappa_x\rangle_H=f(x)$$, where the brackets represent the inner product in $$\mathcal{H}$$. Such $$\kappa_x$$ is the **reproducing kernel** of the Hilbert space $\mathcal{H}$. It is called reproducing kernel because of the property of "reproducing" $$f$$ evaluated at $$x$$.
 
-Here we are really exploiting the power of Reisz theorem which allows us to reproduce "$f$ evaluated at $x$, $f(x)$", with a unique "rule" (or in a unique way), that is, which is an inner product. TO make a step further we can say that the RKHS is the closure of $\mathcal{H}$ in the norm induced by such inner product.
+Here we are really exploiting the power of Reisz theorem which allows us to reproduce "$$f$$ evaluated at $$x$$, $$f(x)$$", with a unique "rule" (or in a unique way), that is, which is an inner product. TO make a step further we can say that the RKHS is the closure of $$\mathcal{H}$$ in the norm induced by such inner product.
 
-As mentioned above,  $\kappa_x \in \mathcal{H}$ for $x \in \mathcal{X}$. If we take $f=\kappa_y \in \mathcal{H}$ we can write
+As mentioned above,  $$\kappa_x \in \mathcal{H}$$ for $$x \in \mathcal{X}$$. If we take $$f=\kappa_y \in \mathcal{H}$$ we can write
+\begin{equation}
+\kappa_y(x)=⟨\kappa_x,\kappa_y⟩
+\end{equation}
 
-$$ \kappa_y(x)=⟨\kappa_x,\kappa_y⟩$$ 
-
-thanks to the reproducing property. We could write a similar expression exchanging $x$ and $y$. More generally we can define a reproducing kernel $\kappa:\mathcal{X}\times \mathcal{X} \rightarrow \mathbb{R}$ as the inner product
-
-$$\kappa(x,y)=⟨\kappa_x, \kappa_y⟩.$$
-
-Such kernel is symmetric and positive definite, that is the Gram (Kernel) matrix $\mathbf{K}$ with elements $K_{i,j}=\kappa(x_i,x_j)$, is positive definite.
+thanks to the reproducing property. We could write a similar expression exchanging $$x$$ and $$y$$. More generally we can define a reproducing kernel $$\kappa:\mathcal{X}\times \mathcal{X} \rightarrow \mathbb{R}$$ as the inner product
+\begin{equation}
+\kappa(x,y)=⟨\kappa_x, \kappa_y⟩.
+\end{equation}
+Such kernel is symmetric and positive definite, that is the Gram (Kernel) matrix $$\mathbf{K}$$ with elements $$K_{i,j}=\kappa(x_i,x_j)$$, is positive definite.
 
 ### Another point of view
 
-We can restate the above from another (slightly formal) point of view. Consider $x \in \mathcal{X}$ and define the kernel function $\kappa_x: \mathcal{X}\rightarrow \mathbb{R}$ as
+We can restate the above from another (slightly formal) point of view. Consider $$x \in \mathcal{X}$$ and define the kernel function $$\kappa_x: \mathcal{X}\rightarrow \mathbb{R}$$ as
 
 $$ \kappa_x(\cdot) = \kappa(\cdot, x). $$
 
-Let $\mathcal{\tilde{H}}$ be the space of functions that can be expanded in $\kappa_x$ for a generic $x\in\mathcal{X}$. Consider two such functions:
-$$
+Let $$\mathcal{\tilde{H}}$$ be the space of functions that can be expanded in $$\kappa_x$$ for a generic $$x\in\mathcal{X}$$. Consider two such functions:
+\begin{equation}
 f = \sum\limits_i \,\alpha_i \, \kappa_{s_i}(\cdot) = \sum\limits_i \alpha_i \, \kappa(\cdot, s_i)\;\;\;\;g = \sum\limits_i \,\alpha_i\,\kappa_{t_i}(\cdot) = \sum\limits_i \alpha_i \, \kappa(\cdot, t_i).
-$$
-
+\end{equation}
 **Define** the inner product
-
-$$ \langle f, g \rangle = \sum\limits_{i}\sum\limits_j \, \alpha_i \, \beta_j \, \kappa(s_i, t_j) .$$
-
-
+\begin{equation}
+\langle f, g \rangle = \sum\limits_{i}\sum\limits_j \, \alpha_i \, \beta_j \, \kappa(s_i, t_j).
+\end{equation
 Thanks to the definition of $f$ and the definition of the inner product, we have (remember, kernel $\kappa$'s are symmetric)
+\begin{equation}
+\langle f, \kappa(\cdot, x) \rangle = \sum\limits_i \, \alpha_i \, \kappa(s_i,x) = f(x)\;\;\;\;\;f\in\mathcal{\tilde{H}}, \;x\in\mathcal{X},
+\end{equation
+where the last equality is true thanks to the definition of $$f$$ given above. This is the **reproducing property**. It is possible to prove that the inner product just given, is in fact "well defined". 
 
-$$ \langle f, \kappa(\cdot, x) \rangle = \sum\limits_i \, \alpha_i \, \kappa(s_i,x) = f(x)\;\;\;\;\;f\in\mathcal{\tilde{H}}, \;x\in\mathcal{X},$$
+_The RKHS is the closure of $\mathbf{\tilde{H}}$ in the norm induced by the scalar product $$\langle \rangle$$ defined above_.
 
-where the last equality is true thanks to the definition of $f$ given above. This is the **reproducing property**. It is possible to prove that the inner product just given, is in fact "well defined". 
-
-_The RKHS is the closure of $\mathbf{\tilde{H}}$ in the norm induced by the scalar product $\langle \rangle$ defined above_.
-
-It can also be shown that if a Hilbert space $\mathcal{H}$ has kernel functions $\kappa_x\in \mathcal{H}, \forall x\in\mathcal{X}$ with the reproducing property ($\langle f, \kappa_x \rangle = f(x),\forall f\in\mathcal{H}, x\in\mathcal{X}$), then $\kappa$ is 
+It can also be shown that if a Hilbert space $\mathcal{H}$ has kernel functions $$\kappa_x\in \mathcal{H}, \forall x\in\mathcal{X}$$ with the reproducing property ($$\langle f, \kappa_x \rangle = f(x),\forall f\in\mathcal{H}, x\in\mathcal{X}$$), then $$\kappa$$ is 
 <a target="_blank" href='https://en.wikipedia.org/wiki/Mercer%27s_theorem'>"Mercer"</a> (check it if you're not too tired!)
 
 
