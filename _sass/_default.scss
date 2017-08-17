@@ -10,7 +10,7 @@ a {
     color: #45565c;
     font-weight: bold;
     text-decoration: none;
-
+    
     &:hover {
 
     }
@@ -22,7 +22,7 @@ a {
 	}
 }
 a:active {
-    text-decoration: underline;
+    //text-decoration: underline;
 }
 p {
     font-size: 20px;
@@ -191,7 +191,7 @@ strong {
 }
 
 .post-teaser__title {
-    font-size: 25px;
+    font-size: 26px;
     //color: $iron;
 	color: black;
 }
