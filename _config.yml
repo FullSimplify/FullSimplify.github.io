@@ -5,6 +5,8 @@ description: >
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://FullSimplify.github.io" # the base hostname & protocol for your site
 
+excerpt_separator: "<!--more-->"
+
 author:
   fullname: Gabriele Costanza
   # googleplus: 
