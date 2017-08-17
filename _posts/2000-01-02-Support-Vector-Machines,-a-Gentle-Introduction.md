@@ -24,7 +24,7 @@ and the squared exponential, radial basis function (RBF),
 \kappa(x,x′)=exp\bigg(−\dfrac{\|x−x′\|}2{\sigma^2}\bigg).
 \end{equation}
 Of course there are many different kernels for different uses. Another choice worth mentioning is the Matern Kernel.
-Notice in the last formula how the parameter$$\sigma$$ influences the smoothness of the kernel. In other words, $$\sigma$$ controls how far away points "influence" our current point. if it is large, we allow points far away from the current point to be "taken into account" (correlate). If it is small, only points close to the current point will count.
+Notice in the last formula how the parameter $$\sigma$$ influences the smoothness of the kernel. In other words, $$\sigma$$ controls how far away points "influence" our current point. if it is large, we allow points far away from the current point to be "taken into account" (correlate). If it is small, only points close to the current point will count.
 
 
 Let's make an example where we draw samples from a gaussian process with the squared exponential kernel. Don't worry about the gaussian process part for now. In the first picture $$\sigma=5$$ an in the second  $$\sigma=2$$ . The difference in the smoothness of the curves is clear.
@@ -88,7 +88,7 @@ There is plenty of material on books and internet about the background theory. I
 
 ### Reproducing Kernel Hilbert Space
 
-Let's consider a bounded functional over the Hilbert space $\mathcal{H}$ of functions $$f$$, that is,  $$\mathcal{L}_x:f \rightarrow f(x)$$. In practice $$\mathcal{T}$$ evaluates the function at point $$x$$. If the evaluation is bounded, then $$\mathcal{H}$$ is a reproducing kernel Hilbert space (RKHS) by definition. Thanks to Riesz theorem , such functional can be represented in a unique way, that is, $$\forall f \in \mathcal{H}$$ there is a unique $$\kappa_x \in \mathcal{H}$$ such that  $$\mathcal{L}[f]=\langle f,\kappa_x\rangle_H=f(x)$$, where the brackets represent the inner product in $$\mathcal{H}$$. Such $$\kappa_x$$ is the **reproducing kernel** of the Hilbert space $\mathcal{H}$. It is called reproducing kernel because of the property of "reproducing" $$f$$ evaluated at $$x$$.
+Let's consider a bounded functional over the Hilbert space $\mathcal{H}$ of functions $$f$$, that is,  $$\mathcal{L}_x:f \rightarrow f(x)$$. In practice $$\mathcal{T}$$ evaluates the function at point $$x$$. If the evaluation is bounded, then $$\mathcal{H}$$ is a reproducing kernel Hilbert space (RKHS) by definition. Thanks to Riesz theorem , such functional can be represented in a unique way, that is, $$\forall f \in \mathcal{H}$$ there is a unique $$\kappa_x \in \mathcal{H}$$ such that  $$\mathcal{L}[f]=\langle f,\kappa_x\rangle_H=f(x)$$, where the brackets represent the inner product in $$\mathcal{H}$$. Such $$\kappa_x$$ is the **reproducing kernel** of the Hilbert space $$\mathcal{H}$$. It is called reproducing kernel because of the property of "reproducing" $$f$$ evaluated at $$x$$.
 
 Here we are really exploiting the power of Reisz theorem which allows us to reproduce "$$f$$ evaluated at $$x$$, $$f(x)$$", with a unique "rule" (or in a unique way), that is, which is an inner product. TO make a step further we can say that the RKHS is the closure of $$\mathcal{H}$$ in the norm induced by such inner product.
 
@@ -106,9 +106,9 @@ Such kernel is symmetric and positive definite, that is the Gram (Kernel) matrix
 ### Another point of view
 
 We can restate the above from another (slightly formal) point of view. Consider $$x \in \mathcal{X}$$ and define the kernel function $$\kappa_x: \mathcal{X}\rightarrow \mathbb{R}$$ as
-
-$$ \kappa_x(\cdot) = \kappa(\cdot, x). $$
-
+\begin{equation}
+\kappa_x(\cdot) = \kappa(\cdot, x). 
+\end{equation}
 Let $$\mathcal{\tilde{H}}$$ be the space of functions that can be expanded in $$\kappa_x$$ for a generic $$x\in\mathcal{X}$$. Consider two such functions:
 \begin{equation}
 f = \sum\limits_i \,\alpha_i \, \kappa_{s_i}(\cdot) = \sum\limits_i \alpha_i \, \kappa(\cdot, s_i)\;\;\;\;g = \sum\limits_i \,\alpha_i\,\kappa_{t_i}(\cdot) = \sum\limits_i \alpha_i \, \kappa(\cdot, t_i).
@@ -123,7 +123,7 @@ Thanks to the definition of $f$ and the definition of the inner product, we have
 \end{equation
 where the last equality is true thanks to the definition of $$f$$ given above. This is the **reproducing property**. It is possible to prove that the inner product just given, is in fact "well defined". 
 
-_The RKHS is the closure of $\mathbf{\tilde{H}}$ in the norm induced by the scalar product $$\langle \rangle$$ defined above_.
+_The RKHS is the closure of $$\mathbf{\tilde{H}}$$ in the norm induced by the scalar product $$\langle \rangle$$ defined above_.
 
 It can also be shown that if a Hilbert space $\mathcal{H}$ has kernel functions $$\kappa_x\in \mathcal{H}, \forall x\in\mathcal{X}$$ with the reproducing property ($$\langle f, \kappa_x \rangle = f(x),\forall f\in\mathcal{H}, x\in\mathcal{X}$$), then $$\kappa$$ is 
 <a target="_blank" href='https://en.wikipedia.org/wiki/Mercer%27s_theorem'>"Mercer"</a> (check it if you're not too tired!)
@@ -142,17 +142,17 @@ $$
 \end{pmatrix}
 $$
 
-Such kernels $\kappa$'s are called positive definite. The elements of $\mathbf{K}$ can be expressed as (see <a target="_blank" href='https://en.wikipedia.org/wiki/Positive-definite_matrix#Characterizations'>here</a>)
-
-$$\kappa(x,y) = \Phi(x) \cdot \Phi(y)$$
-
-where $\Phi(x)$ is a **feature vector**.
+Such kernels $$\kappa$$'s are called positive definite. The elements of $$\mathbf{K}$$ can be expressed as (see <a target="_blank" href='https://en.wikipedia.org/wiki/Positive-definite_matrix#Characterizations'>here</a>)
+\egin{equation}
+\kappa(x,y) = \Phi(x) \cdot \Phi(y),
+\end{equation}
+where $$\Phi(x)$$ is a **feature vector**.
 
 ### Decisions. Optimal Separating Hyperplane
 
 Sounds good? We just skimmed the surface, but that was perhaps sufficient to triggered your interest and raise some questions.
 
-To fix the ideas, consider that the feature vector is an vector with N elements/features: $\Phi(x)=[x_1,x_2,x_3,…]$. If we were classifying cars, for example, the features could be, car weight, year of production, engine power. Cars could be hard to classify based on these features. What if we add another feature, that is, *increase the dimension* of the feature space? This feature doesn't even have to be real, it's used to increase the discriminative power of our algorithm since the features that we have are "insufficient", i.e. our data looks like in the figures below.
+To fix the ideas, consider that the feature vector is an vector with N elements/features: $$\Phi(x)=[x_1,x_2,x_3,…]$$. If we were classifying cars, for example, the features could be, car weight, year of production, engine power. Cars could be hard to classify based on these features. What if we add another feature, that is, *increase the dimension* of the feature space? This feature doesn't even have to be real, it's used to increase the discriminative power of our algorithm since the features that we have are "insufficient", i.e. our data looks like in the figures below.
 
 
 ```python
