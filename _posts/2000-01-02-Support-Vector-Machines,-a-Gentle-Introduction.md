@@ -11,7 +11,9 @@ For example, if we had a box of apples and we wanted to classify based on color,
 
 How does the model know what's green or red to begin with? We need to train our model on apples we know for sure are red or green. Applying the concept of distance to a new apple that we pick from the box, we can compare the new apple with the previously observed green and red apples.
 
+
 ## Kernels
+
 
 In general, rather than apples we have objects $$x$$, belonging to a space $$\mathcal{X}$$. Our concept of similarity is embodied by a function $$\mathcal{X}\times\mathcal{X}\rightarrow\mathbb{R}$$ that we call Kernel Function. It is a measure of the distance between $$x$$ and $$y$$. It is natural to choose a kernel that is symmetric ($$κ(x,y)=κ(y,x)κ(x,y)=κ(y,x)$$), that is, the similarity or distance between $$x$$ and $$y$$ is the same as the distance between $$y$$  and $$x$$, and non-negative ($$κ(x,y)\geq 0$$), but it doesn't need be.
 
@@ -84,9 +86,13 @@ plt.show()
 
 
 ## A Few Mathematical Details
+
+
 There is plenty of material on books and internet about the background theory. I'm just giving a hint to fix some concepts, after all, this is a gentle introduction. *Feel free to skip this section* if you're more example oriented. Those really intrested in (the very intresting) theory can check the literature. I recommend the book written by <a target="_blank" href='http://www.cs.ubc.ca/~murphyk/MLbook/index.html'>Kevin P. Murphy</a>.
 
-### Reproducing Kernel Hilbert Space
+
+
+## Reproducing Kernel Hilbert Space
 
 Let's consider a bounded functional over the Hilbert space $$\mathcal{H}$$ of functions $$f$$, that is,  $$\mathcal{L}_x:f \rightarrow f(x)$$. In practice $$\mathcal{T}$$ evaluates the function at point $$x$$. If the evaluation is bounded, then $$\mathcal{H}$$ is a reproducing kernel Hilbert space (RKHS) by definition. Thanks to Riesz theorem , such functional can be represented in a unique way, that is, $$\forall f \in \mathcal{H}$$ there is a unique $$\kappa_x \in \mathcal{H}$$ such that  $$\mathcal{L}[f]=\langle f,\kappa_x\rangle_H=f(x)$$, where the brackets represent the inner product in $$\mathcal{H}$$. Such $$\kappa_x$$ is the **reproducing kernel** of the Hilbert space $$\mathcal{H}$$. It is called reproducing kernel because of the property of "reproducing" $$f$$ evaluated at $$x$$.
 
@@ -103,7 +109,9 @@ thanks to the reproducing property. We could write a similar expression exchangi
 \end{equation}
 Such kernel is symmetric and positive definite, that is the Gram (Kernel) matrix $$\mathbf{K}$$ with elements $$K_{i,j}=\kappa(x_i,x_j)$$, is positive definite.
 
-### Another point of view
+
+## Another point of view
+
 
 We can restate the above from another (slightly formal) point of view. Consider $$x \in \mathcal{X}$$ and define the kernel function $$\kappa_x: \mathcal{X}\rightarrow \mathbb{R}$$ as
 \begin{equation}
@@ -129,7 +137,8 @@ It can also be shown that if a Hilbert space $\mathcal{H}$ has kernel functions 
 <a target="_blank" href='https://en.wikipedia.org/wiki/Mercer%27s_theorem'>"Mercer"</a> (check it if you're not too tired!)
 
 
-### Kernel Matrix
+## Kernel Matrix
+
 
 The result is then that some kernel functions allow us to define a positive definite kernel matrix 
 
@@ -148,7 +157,9 @@ Such kernels $$\kappa$$'s are called positive definite. The elements of $$\mathb
 \end{equation}
 where $$\Phi(x)$$ is a **feature vector**.
 
+
 ### Decisions. Optimal Separating Hyperplane
+
 
 Sounds good? We just skimmed the surface, but that was perhaps sufficient to triggered your interest and raise some questions.
 
