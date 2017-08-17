@@ -78,8 +78,7 @@ strong {
 }
 
 .post-divider {
-   border-color: black;
-   border-bottom: 1px solid black;
+   border-bottom: 1px solid;
  }
 
 /* =Header */
@@ -179,7 +178,7 @@ strong {
 /* =Post teasers */
 
 .list-posts {
-    //list-style-type: none;
+    list-style-type: none;
     padding: 0px;
 }
 
