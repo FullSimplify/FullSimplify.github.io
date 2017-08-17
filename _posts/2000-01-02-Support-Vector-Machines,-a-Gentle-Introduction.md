@@ -79,11 +79,11 @@ plt.show()
 ```
 
 
-![png](\2015\01\20\Support-Vector-Machines-a-Gentle-Introduction/SVM_1_0.png)
+![png](SVM/SVM_1_0.png)
 
 
 
-![png](Support-Vector-Machines-a-Gentle-Introduction/SVM_1_1.png)
+![png](SVM/SVM_1_1.png)
 
 
 ## A Few Mathematical Details
