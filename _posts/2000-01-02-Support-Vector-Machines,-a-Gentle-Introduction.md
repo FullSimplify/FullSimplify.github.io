@@ -221,11 +221,11 @@ plt.show()
 ```
 
 
-![figure 1](SVM_files/SVM_3_0.png?raw=true)
+![figure 1](/SVM_files/SVM_3_0.png?raw=true)
 
 
 
-![figure 2](SVM_files/SVM_3_1.png?raw=true)
+![figure 2](/_posts/SVM_3_1.png?raw=true)
 
 
 
