@@ -245,7 +245,7 @@ The problem of finding such hyperplane (or hypersurface in the non linear case) 
 
 To recap, the main ingredients that we need are the labeled dataset to train the SVM, a kernel and an optimization method. We can use well established python modules for our SVMs. 
 
-### An Example 
+## An Example 
 
 Coming Soon!
 
