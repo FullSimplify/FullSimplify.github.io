@@ -133,7 +133,7 @@ where the last equality is true thanks to the definition of $$f$$ given above. T
 
 _The RKHS is the closure of $$\,\mathbf{\tilde{H}}\,$$ in the norm induced by the scalar product $$\langle \rangle$$ defined above_.
 
-It can also be shown that if a Hilbert space $\mathcal{H}$ has kernel functions $$\kappa_x\in \mathcal{H}, \forall x\in\mathcal{X}$$ with the reproducing property ($$\langle f, \kappa_x \rangle = f(x),\forall f\in\mathcal{H}, x\in\mathcal{X}$$), then $$\kappa$$ is 
+It can also be shown that if a Hilbert space $$\mathcal{H}$$ has kernel functions $$\kappa_x\in \mathcal{H}, \forall x\in\mathcal{X}$$ with the reproducing property ($$\langle f, \kappa_x \rangle = f(x),\forall f\in\mathcal{H}, x\in\mathcal{X}$$), then $$\kappa$$ is 
 <a target="_blank" href='https://en.wikipedia.org/wiki/Mercer%27s_theorem'>"Mercer"</a> (check it if you're not too tired!)
 
 
