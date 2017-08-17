@@ -110,6 +110,9 @@ strong {
     &:last-child {
         margin-right: 0px;
     }
+    &:active{
+	 text-decoration: underline;   
+	}
 }
 
 .menu__entry a {
