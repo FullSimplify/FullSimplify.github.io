@@ -120,7 +120,7 @@ f = \sum\limits_i \,\alpha_i \, \kappa_{s_i}(\cdot) = \sum\limits_i \alpha_i \, 
 Thanks to the definition of $f$ and the definition of the inner product, we have (remember, kernel $\kappa$'s are symmetric)
 \begin{equation}
 \langle f, \kappa(\cdot, x) \rangle = \sum\limits_i \, \alpha_i \, \kappa(s_i,x) = f(x)\;\;\;\;\;f\in\mathcal{\tilde{H}}, \;x\in\mathcal{X},
-\end{equation
+\end{equation}
 where the last equality is true thanks to the definition of $$f$$ given above. This is the **reproducing property**. It is possible to prove that the inner product just given, is in fact "well defined". 
 
 _The RKHS is the closure of $$\mathbf{\tilde{H}}$$ in the norm induced by the scalar product $$\langle \rangle$$ defined above_.
