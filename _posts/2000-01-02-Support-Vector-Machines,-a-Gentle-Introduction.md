@@ -158,7 +158,7 @@ Such kernels $$\kappa$$'s are called positive definite. The elements of $$\mathb
 where $$\Phi(x)$$ is a **feature vector**.
 
 
-### Decisions. Optimal Separating Hyperplane
+## Decisions. Optimal Separating Hyperplane
 
 
 Sounds good? We just skimmed the surface, but that was perhaps sufficient to triggered your interest and raise some questions.
