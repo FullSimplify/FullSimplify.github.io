@@ -15,12 +15,12 @@ How does the model know what's green or red to begin with? We need to train our 
 
 ## Kernels
 
-In general, rather than apples we have objects mathcal{x}, belonging to a space $\mathcal{X}$. Our concept of similarity is embodied by a function $\mathcal{X}\times\mathcal{X}\rightarrow\mathbb{R}$ that we call Kernel Function. It is a measure of the distance between $x$ and $y$. It is natural to choose a kernel that is symmetric ( $κ(x,y)=κ(y,x)κ(x,y)=κ(y,x)$ ), that is, the similarity or distance between $x$ and $y$ is the same as the distance between $y$  and $x$, and non-negative ( $κ(x,y)\geq 0$ ), but it doesn't need be.
+In general, rather than apples we have objects mathcal{x}, belonging to a space $$\mathcal{X}$$. Our concept of similarity is embodied by a function $$\mathcal{X}\times\mathcal{X}\rightarrow\mathbb{R}$$ that we call Kernel Function. It is a measure of the distance between $$x$$ and $$y$$. It is natural to choose a kernel that is symmetric ( $$κ(x,y)=κ(y,x)κ(x,y)=κ(y,x)$$ ), that is, the similarity or distance between $$x$$ and $$y$$ is the same as the distance between $$y$$  and $$x$$, and non-negative ( $$κ(x,y)\geq 0$$ ), but it doesn't need be.
 
 Two popular choices are the Gaussian kernel,
-
-$\kappa(x,x′)=exp\bigg(−\dfrac{1}{2}(x−x′)^T\,\Sigma^{−1}\,(x−x′)\bigg)$,
-
+\begin{equation}
+\kappa(x,x′)=exp\bigg(−\dfrac{1}{2}(x−x′)^T\,\Sigma^{−1}\,(x−x′)\bigg),
+\end{equation}
 and the squared exponential, radial basis function (RBF),
 
 $\kappa(x,x′)=exp\bigg(−\dfrac{\|x−x′\|}2{\sigma^2}\bigg)$.
