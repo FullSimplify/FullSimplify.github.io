@@ -117,7 +117,7 @@ f = \sum\limits_i \,\alpha_i \, \kappa_{s_i}(\cdot) = \sum\limits_i \alpha_i \, 
 \begin{equation}
 \langle f, g \rangle = \sum\limits_{i}\sum\limits_j \, \alpha_i \, \beta_j \, \kappa(s_i, t_j).
 \end{equation}
-Thanks to the definition of $f$ and the definition of the inner product, we have (remember, kernel $\kappa$'s are symmetric)
+Thanks to the definition of $$f$$ and the definition of the inner product, we have (remember, kernel $$\kappa$$'s are symmetric)
 \begin{equation}
 \langle f, \kappa(\cdot, x) \rangle = \sum\limits_i \, \alpha_i \, \kappa(s_i,x) = f(x)\;\;\;\;\;f\in\mathcal{\tilde{H}}, \;x\in\mathcal{X},
 \end{equation}
