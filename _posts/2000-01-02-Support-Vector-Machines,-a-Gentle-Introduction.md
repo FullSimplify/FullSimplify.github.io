@@ -30,7 +30,7 @@ Of course there are many different kernels for different uses. Another choice wo
 Notice in the last formula how the parameter $$\sigma$$ influences the smoothness of the kernel. In other words, $$\sigma$$ controls how far away points "influence" our current point. if it is large, we allow points far away from the current point to be "taken into account" (correlate). If it is small, only points close to the current point will count.
 
 
-Let's make an example where we draw samples from a gaussian process with the squared exponential kernel. Don't worry about the gaussian process part for now. In the first picture $$\sigma=5$$ an in the second  $$\sigma=2$$ . The difference in the smoothness of the curves is clear.
+Let's make an example where we draw samples from a gaussian process with the squared exponential kernel. Don't worry about the gaussian process part for now. In the first picture $$\sigma=5$$ while in the second $$\sigma=2$$. The difference in the smoothness of the curves is clear.
 
 
 ```python
