@@ -13,7 +13,7 @@ How does the model know what's green or red to begin with? We need to train our 
 
 ## Kernels
 
-In general, rather than apples we have objects x, belonging to a space $$\mathcal{X}$$. Our concept of similarity is embodied by a function $$\mathcal{X}\times\mathcal{X}\rightarrow\mathbb{R}$$ that we call Kernel Function. It is a measure of the distance between $$x$$ and $$y$$. It is natural to choose a kernel that is symmetric ( $$κ(x,y)=κ(y,x)κ(x,y)=κ(y,x)$$ ), that is, the similarity or distance between $$x$$ and $$y$$ is the same as the distance between $$y$$  and $$x$$, and non-negative ( $$κ(x,y)\geq 0$$ ), but it doesn't need be.
+In general, rather than apples we have objects $$x$$, belonging to a space $$\mathcal{X}$$. Our concept of similarity is embodied by a function $$\mathcal{X}\times\mathcal{X}\rightarrow\mathbb{R}$$ that we call Kernel Function. It is a measure of the distance between $$x$$ and $$y$$. It is natural to choose a kernel that is symmetric ($$κ(x,y)=κ(y,x)κ(x,y)=κ(y,x)$$), that is, the similarity or distance between $$x$$ and $$y$$ is the same as the distance between $$y$$  and $$x$$, and non-negative ($$κ(x,y)\geq 0$$), but it doesn't need be.
 
 Two popular choices are the Gaussian kernel,
 \begin{equation}
@@ -24,7 +24,7 @@ and the squared exponential, radial basis function (RBF),
 \kappa(x,x′)=exp\bigg(−\dfrac{\|x−x′\|}2{\sigma^2}\bigg).
 \end{equation}
 Of course there are many different kernels for different uses. Another choice worth mentioning is the Matern Kernel.
-Notice in the last formula how the parameter$$\sigma$$ influences the smoothness of the kernel. In other words, $$\sigma$$ controls how far away points "influence" our current point. if it is large, we allow points far away from the current point to be "taken into account" (correlate). If it is is small, only points close to the current point will count.
+Notice in the last formula how the parameter$$\sigma$$ influences the smoothness of the kernel. In other words, $$\sigma$$ controls how far away points "influence" our current point. if it is large, we allow points far away from the current point to be "taken into account" (correlate). If it is small, only points close to the current point will count.
 
 
 Let's make an example where we draw samples from a gaussian process with the squared exponential kernel. Don't worry about the gaussian process part for now. In the first picture $$\sigma=5$$ an in the second  $$\sigma=2$$ . The difference in the smoothness of the curves is clear.
