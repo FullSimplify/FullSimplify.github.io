@@ -7,19 +7,18 @@ sitemap:
 ---
 
 <ul class="list-posts">
-  <i class="fa fa-cogs post-teaser side-icon" aria-hidden="true">
     {% for post in site.posts %}
         <li class="post-teaser">
+          <i class="fa fa-cogs post-teaser side-icon" aria-hidden="true">
             <a href="{{ post.url | prepend: site.baseurl }}">
                 <span class="post-teaser__title" style="font-size:26px">{{ post.title }}</span>                
-                <!--<span class="post-teaser__date">{{ post.date | date: "%d %B %Y" }}</span>-->
-              
+                <!--<span class="post-teaser__date">{{ post.date | date: "%d %B %Y" }}</span>-->              
             </a>
+            <i class="fa fa-cogs post-teaser side-icon" aria-hidden="true">
         </li>
     <p id='post-teaser-subtitle' style="font-weight:200; font-size:18px">{{ post.excerpt }}</p> 
   <p id='post-divider' style="border-bottom: 1px solid;">
   </p>
     {% endfor %}
-  </i>
 </ul>
 
