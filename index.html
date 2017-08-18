@@ -8,7 +8,7 @@ sitemap:
 
 <ul class="list-posts">
     {% for post in site.posts %}
-  <i id='side-icon' class="fa fa-cogs" aria-hidden="true">
+  <i id='side-icon' class=\"fa #{page.id}\" aria-hidden="true">
     </i>
         <li class="post-teaser">          
             <a href="{{ post.url | prepend: site.baseurl }}">
