@@ -8,14 +8,14 @@ sitemap:
 
 <ul class="list-posts">
     {% for post in site.posts %}
-        <li class="post-teaser">
-          
+  <i class="fa fa-cogs" aria-hidden="true">
+        <li class="post-teaser">          
             <a href="{{ post.url | prepend: site.baseurl }}">
                 <span class="post-teaser__title" style="font-size:26px">{{ post.title }}</span>                
                 <!--<span class="post-teaser__date">{{ post.date | date: "%d %B %Y" }}</span>-->              
-            </a>
-            
+            </a>           
         </li>
+  </i>
     <p id='post-teaser-subtitle' style="font-weight:200; font-size:18px">{{ post.excerpt }}</p> 
   <p id='post-divider' style="border-bottom: 1px solid;">
   </p>
