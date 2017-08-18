@@ -7,6 +7,7 @@ sitemap:
 ---
 
 <ul class="list-posts">
+  <i class="fa fa-cogs" aria-hidden="true">
     {% for post in site.posts %}
         <li class="post-teaser">
             <a href="{{ post.url | prepend: site.baseurl }}">
@@ -19,5 +20,6 @@ sitemap:
   <p id='post-divider' style="border-bottom: 1px solid;">
   </p>
     {% endfor %}
+  </i>
 </ul>
 
