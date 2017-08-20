@@ -1,10 +1,19 @@
-
+layout: post
+description: Simulating the Geometric Brownian Motion. We discuss Random Walk, Wiener Processes and the Black Scholes Merton model.
+excerpt: Simulating the Geometric Brownian Motion. We discuss Random Walk, Wiener Processes and the Black Scholes Merton model.
+title: "Support Vector Machines, a Gentle Introduction"
+subtitle: Simulating the Geometric Brownian Motion. We discuss Random Walk, Wiener Processes and the Black Scholes Merton model.
+excerpt_separator: <!--more-->
+icon: fa fa-area-chart
+date: 2015-01-20 12:09:42
+categories: 
+---
 # Geometric Brownian Motion: an Option Pricing Example.
 
 
 ## Brownian Motion
 
-*Geometric Brownian Motion* (GBM) is an ubiquitous example of random process, used not only in science, but also in finance, for example in the <a target="_blank" href='https://en.wikipedia.org/wiki/Black%E2%80%93Scholes_model'>Black-Scholes model</a>.
+*Geometric Brownian Motion* (GBM) is an ubiquitous example of random process, used not only in science, but also in finance, for example <!--more--> in the <a target="_blank" href='https://en.wikipedia.org/wiki/Black%E2%80%93Scholes_model'>Black-Scholes model</a>.
 First of all, we need to specify what we mean with Geometric Brownian Motion. As the name suggests, the main ingredient of  such mathematical object is related to the concept of <a target="_blank" href='https://en.wikipedia.org/wiki/Brownian_motion'>Brownian Motion</a>, a continuous-time random process that can be thought of as the limit of a <a target="_blank" href='https://en.wikipedia.org/wiki/Random_Walk'>Random Walk</a>. The other ingredients that we need are a *mean value*, $\mu$, and a *variance*, $\sigma$, representing the "volatility" of variable that we are modeling.
 
 We generate our Brownian motion, $W$ starting from a Random Walk. It's worth mentioning some fundamental facts:
