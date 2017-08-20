@@ -33,7 +33,7 @@ W_{t_2}  = W_{t_1} + \sqrt{t_2 - t_1}\;Z_1 \\
  \vdots \\
  W_{t_n}  = \sqrt{dt}\sum\limits_i^n\,Z_i,\\
  \end{array}
-where $$Z_i$$ is a standard normal variable. In line *40* in the Python code above, we're calculating $$W_{t_n}$$ as we have just described.
+where $$Z_i$$ is a standard normal variable. In line *40* in the Python code below, we're calculating $$W_{t_n}$$ as we have just described.
 
 In a Brownian Motion with Drift $$\mu$$ we have instead 
 \begin{equation}
