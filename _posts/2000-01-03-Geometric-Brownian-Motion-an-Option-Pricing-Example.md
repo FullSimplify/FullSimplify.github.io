@@ -17,7 +17,7 @@ categories:
 *Geometric Brownian Motion* (GBM) is an ubiquitous example of random process, used not only in science, but also in finance, for example <!--more--> in the <a target="_blank" href='https://en.wikipedia.org/wiki/Black%E2%80%93Scholes_model'>Black-Scholes model</a>.
 First of all, we need to specify what we mean with Geometric Brownian Motion. As the name suggests, the main ingredient of  such mathematical object is related to the concept of <a target="_blank" href='https://en.wikipedia.org/wiki/Brownian_motion'>Brownian Motion</a>, a continuous-time random process that can be thought of as the limit of a <a target="_blank" href='https://en.wikipedia.org/wiki/Random_Walk'>Random Walk</a>. The other ingredients that we need are a *mean value*, $$\mu$$, and a *variance*, $$\sigma$$, representing the "volatility" of variable that we are modeling.
 
-We generate our Brownian motion, $W$ starting from a Random Walk. It's worth mentioning some fundamental facts:
+We generate our Brownian motion, $$W$$ starting from a Random Walk. It's worth mentioning some fundamental facts:
 <ul>
 <li> $$W_0 = 0$$ (see figure above).<\li>
 <li> $$W$$ is made of stationary and independent increments.<\li>
@@ -46,7 +46,7 @@ The final step is to calcualte the Geometric Brownian Motion
 S_t = S_0 \exp\bigg(\big(\mu - \dfrac{\sigma^2}{2}\big)t + \sigma W_t\bigg),
 \end{equation}
 
-which is implemented in line *41* in the code below. To make a practical example, I will get the values for the mean $\mu$ and the volatility $\sigma$ from the close prices of EURUSD. Moreover We assume that the close prices are normally distributed (more below) and perform a <a target="_blank" href='https://en.wikipedia.org/wiki/Maximum_likelihood_estimation'>Maximum Likelihood Estimation</a> as well as a <a target="_blank" href='https://en.wikipedia.org/wiki/Kernel_density_estimation'>Kernel Density Estimation</a> (KDE) on the EURUSD returns. Notice that the results are in $$10^{-4}$$ pips, thus the small numbers for $$\mu$$ and $$\sigma$$. We have all the ingredients to generate our GBMs. Time to write some code!
+which is implemented in line *41* in the code below. To make a practical example, I will get the values for the mean $$\mu$$ and the volatility $$\sigma$$ from the close prices of EURUSD. Moreover We assume that the close prices are normally distributed (more below) and perform a <a target="_blank" href='https://en.wikipedia.org/wiki/Maximum_likelihood_estimation'>Maximum Likelihood Estimation</a> as well as a <a target="_blank" href='https://en.wikipedia.org/wiki/Kernel_density_estimation'>Kernel Density Estimation</a> (KDE) on the EURUSD returns. Notice that the results are in $$10^{-4}$$ pips, thus the small numbers for $$\mu$$ and $$\sigma$$. We have all the ingredients to generate our GBMs. Time to write some code!
 
 
 ```python
@@ -136,11 +136,11 @@ with
 d_{\pm}(t,s) = \dfrac{1}{\sigma\sqrt{T - t}}\bigg[ \ln\bigg(\dfrac{s}{K}\bigg) + \big( r \pm \dfrac{\sigma^2}{2}\big)\,(T-t) \bigg]
 \end{equation}
 
-where, $s$ is the current price of the underlying, $T$ is the expiration date, $K$ is the strike price, $r$ is the interest rate and $\sigma$ is the volatility. 
+where, $$s$$ is the current price of the underlying, $$T$$ is the expiration date, $$K$$ is the strike price, $$r$$ is the interest rate and $$\sigma$$ is the volatility. 
 
-The quantity $F(t,s)$ measures the value of the <a target="_blank" href='https://en.wikipedia.org/wiki/Option_contract'> option contract</a> at time $t$ for the underlying with price $s$.
+The quantity $$F(t,s)$$ measures the value of the <a target="_blank" href='https://en.wikipedia.org/wiki/Option_contract'> option contract</a> at time $t$ for the underlying with price $$s$$.
 
-Let's make an example. Mantaining the code above we jsut need to <a target="_blank" href='https://en.wikipedia.org/wiki/Implied_volatility'> change the value of the volatility </a> and add the following code. Here, tau $= T-t$.
+Let's make an example. Mantaining the code above we jsut need to <a target="_blank" href='https://en.wikipedia.org/wiki/Implied_volatility'> change the value of the volatility </a> and add the following code. Here, tau $$= T-t$$.
 
 
 ```python
