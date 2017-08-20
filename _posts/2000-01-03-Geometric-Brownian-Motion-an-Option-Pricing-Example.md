@@ -115,7 +115,7 @@ plt.show()
 ```
 
 
-![png](/_posts/GBM_files/GBM_1_0.png?raw=true)
+![png](/GBM_files/GBM_1_0.png?raw=true)
 
 
 The code is quite self-explanatory. First we load the data. We then define the returns and calculate the mean and volatility of the EURUSD close prices. Finally we calculate (15 = nsamp) possible realization of the Wiener process needed to compute the GBM (lines 40 and 41).
@@ -168,7 +168,7 @@ plt.show()
 ```
 
 
-![png](/posts/GBM_files/GBM_3_0.png?raw=true)
+![png](/GBM_files/GBM_3_0.png?raw=true)
 
 
 # Calls and Puts, Buy and Sell
