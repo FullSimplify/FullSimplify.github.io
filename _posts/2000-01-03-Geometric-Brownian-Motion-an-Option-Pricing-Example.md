@@ -46,7 +46,7 @@ The final step is to calcualte the Geometric Brownian Motion
 S_t = S_0 \exp\bigg(\big(\mu - \dfrac{\sigma^2}{2}\big)t + \sigma W_t\bigg),
 \end{equation}
 
-which is implemented in line *41* in the code below. To make a practical example, I will get the values for the mean $\mu$ and the volatility $\sigma$ from the close prices of EURUSD. Moreover We assume that the close prices are normally distributed (more below) and perform a <a target="_blank" href='https://en.wikipedia.org/wiki/Maximum_likelihood_estimation'>Maximum Likelihood Estimation</a> as well as a <a target="_blank" href='https://en.wikipedia.org/wiki/Kernel_density_estimation'>Kernel Density Estimation</a> (KDE) on the EURUSD returns. Notice that the results are in $10^{-4}$ pips, thus the small numbers for $\mu$ and $\sigma$. We have all the ingredients to generate our GBMs. Time to write some code!
+which is implemented in line *41* in the code below. To make a practical example, I will get the values for the mean $\mu$ and the volatility $\sigma$ from the close prices of EURUSD. Moreover We assume that the close prices are normally distributed (more below) and perform a <a target="_blank" href='https://en.wikipedia.org/wiki/Maximum_likelihood_estimation'>Maximum Likelihood Estimation</a> as well as a <a target="_blank" href='https://en.wikipedia.org/wiki/Kernel_density_estimation'>Kernel Density Estimation</a> (KDE) on the EURUSD returns. Notice that the results are in $$10^{-4}$$ pips, thus the small numbers for $$\mu$$ and $$\sigma$$. We have all the ingredients to generate our GBMs. Time to write some code!
 
 
 ```python
