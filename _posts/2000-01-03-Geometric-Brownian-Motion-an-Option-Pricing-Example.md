@@ -19,9 +19,9 @@ First of all, we need to specify what we mean with Geometric Brownian Motion. As
 
 We generate our Brownian motion, $W$ starting from a Random Walk. It's worth mentioning some fundamental facts:
 <ul>
-<li> $W_0 = 0$ (see figure above).<\li>
-<li> $W$ is made of stationary and independent increments.<\li>
-<li> $W_t - W_s$ is normally distributed with mean 0 and variance $$t-s$$, for $$0\leq s<t$$,<\li>
+<li> $$W_0 = 0$$ (see figure above).<\li>
+<li> $$W$$ is made of stationary and independent increments.<\li>
+<li> $$W_t - W_s$$ is normally distributed with mean 0 and variance $$t-s$$, for $$0\leq s<t$$,<\li>
 <\ul>
 so that $$(W_{t_i} - W_{t_{i-1}}) \sim \mathcal{N}(0, t_i - t_{i-1})$$. Considering that a normal variable $$\sim \mathcal{N}_t(0,\sigma^2)$$ can be represented as $$\sim \sigma \mathcal{N}_t(0,1)$$. Take a standard normal variable $$\epsilon_i$$. Considering property 3 from the list above, we can simulate our brownian motion by generating increments $$W_{t_i} - W_{t_{i-1}} = \sqrt{t_i-t_{i-1}}\;\epsilon_i = \sqrt{dt}\;\epsilon_i$$ so, we can calculate every increment of our Brownian motion as being $\sqrt{dt}$ times a standard normal variable, which is easy to generate in Python. We have assumed $$t_i - t_{i-1} = dt\; \forall i$$. In practice what we're saying is that
 
