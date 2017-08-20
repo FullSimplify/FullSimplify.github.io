@@ -139,7 +139,7 @@ d_{\pm}(t,s) = \dfrac{1}{\sigma\sqrt{T - t}}\bigg[ \ln\bigg(\dfrac{s}{K}\bigg) +
 
 where, $$s$$ is the current price of the underlying, $$T$$ is the expiration date, $$K$$ is the strike price, $$r$$ is the interest rate and $$\sigma$$ is the volatility. 
 
-The quantity $$F(t,s)$$ measures the value of the <a target="_blank" href='https://en.wikipedia.org/wiki/Option_contract'> option contract</a> at time $t$ for the underlying with price $$s$$.
+The quantity $$F(t,s)$$ measures the value of the <a target="_blank" href='https://en.wikipedia.org/wiki/Option_contract'> option contract</a> at time $$t$$ for the underlying with price $$s$$.
 
 Let's make an example. Mantaining the code above we jsut need to <a target="_blank" href='https://en.wikipedia.org/wiki/Implied_volatility'> change the value of the volatility </a> and add the following code. Here, tau $$= T-t$$.
 
