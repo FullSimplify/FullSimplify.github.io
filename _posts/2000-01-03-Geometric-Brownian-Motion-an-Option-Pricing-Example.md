@@ -28,9 +28,9 @@ $$W_{t_i} - W_{t_{i-1}} = \sqrt{t_i-t_{i-1}}\;\epsilon_i = \sqrt{dt}\;\epsilon_i
 
 taht is, we calculate the increments of the Brownian motion as being $$\sqrt{dt}$$ times a standard normal variable, which is easy to generate in Python. We have assumed $$t_i - t_{i-1} = dt\; \forall i.$$ In practice what we're saying is that
 \begin{array}{l}
-W_{t_1}  = \sqrt{t_1}\;Z_1 \\
-W_{t_2}  = W_{t_1} + \sqrt{t_2 - t_1}\;Z_1 \\
- \vdots \\
+W_{t_1}  = \sqrt{t_1}\;Z_1,\\
+W_{t_2}  = W_{t_1} + \sqrt{t_2 - t_1}\;Z_1,\\
+ \vdots, \\
  W_{t_n}  = \sqrt{dt}\sum\limits_i^n\,Z_i,\\
  \end{array}
 where $$Z_i$$ is a standard normal variable. In line *40* in the Python code below, we're calculating $$W_{t_n}$$ as we have just described.
