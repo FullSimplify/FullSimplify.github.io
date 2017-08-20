@@ -165,7 +165,7 @@ plt.show()
 ```
 
 
-![png](/GBM_files/GBM_3_0.png?raw=true)
+![png](/posts/GBM_files/GBM_3_0.png?raw=true)
 
 
 # Calls and Puts, Buy and Sell
