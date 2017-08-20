@@ -18,9 +18,10 @@ categories:
 First of all, we need to specify what we mean with Geometric Brownian Motion. As the name suggests, the main ingredient of  such mathematical object is related to the concept of <a target="_blank" href='https://en.wikipedia.org/wiki/Brownian_motion'>Brownian Motion</a>, a continuous-time random process that can be thought of as the limit of a <a target="_blank" href='https://en.wikipedia.org/wiki/Random_Walk'>Random Walk</a>. The other ingredients that we need are a *mean value*, $$\mu$$, and a *variance*, $$\sigma$$, representing the "volatility" of variable that we are modeling.
 
 We generate our Brownian motion, $$W$$ starting from a Random Walk. It's worth mentioning some fundamental facts:
-1. $$W_0 = 0$$.<br>
-2. $$W$$ is made of stationary and independent increments.<br>
-3. $$W_t - W_s$$ is normally distributed with mean 0 and variance $$t-s$$, for $$0\leq s < t$$,<br>
+1. $$W_0 = 0$$.
+2. $$W$$ is made of stationary and independent increments.
+3. $$W_t - W_s$$ is normally distributed with mean 0 and variance $$t-s$$, for $$0\leq s < t$$,
+
 so that $$(W_{t_i} - W_{t_{i-1}}) \sim \mathcal{N}(0, t_i - t_{i-1})$$. Considering that a normal variable $$\sim \mathcal{N}_t(0,\sigma^2)$$ can be represented as $$\sim \sigma \mathcal{N}_t(0,1)$$. Take a standard normal variable $$\epsilon_i$$. Considering property 3 from the list above, we can simulate our brownian motion by generating increments 
 
 $$W_{t_i} - W_{t_{i-1}} = \sqrt{t_i-t_{i-1}}\;\epsilon_i = \sqrt{dt}\;\epsilon_i.$$ 
@@ -28,8 +29,11 @@ $$W_{t_i} - W_{t_{i-1}} = \sqrt{t_i-t_{i-1}}\;\epsilon_i = \sqrt{dt}\;\epsilon_i
 taht is, we calculate the increments of the Brownian motion as being $$\sqrt{dt}$$ times a standard normal variable, which is easy to generate in Python. We have assumed $$t_i - t_{i-1} = dt\; \forall i.$$ In practice what we're saying is that
 
 $$W_{t_1} & = \sqrt{t_1}\;Z_1$$
+
 $$W_{t_2} & = W_{t_1} + \sqrt{t_2 - t_1}\;Z_1$
+
 $$ & \vdots $$
+
 $$W_{t_n} & = \sqrt{dt}\sum\limits_i^n\,Z_i,$$
 
 where $$Z_i$$ is a standard normal variable. In line *40* in the Python code above, we're calculating $$W_{t_n}$$ as we have just described.
