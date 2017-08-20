@@ -15,7 +15,7 @@ categories:
 ## Brownian Motion
 
 *Geometric Brownian Motion* (GBM) is an ubiquitous random process, used not only in science, but also in finance, for example <!--more--> in the <a target="_blank" href='https://en.wikipedia.org/wiki/Black%E2%80%93Scholes_model'>Black-Scholes model</a>.
-First of all, we need to specify what we mean with Geometric Brownian Motion. As the name suggests, the main ingredient of  such mathematical object is related to the concept of <a target="_blank" href='https://en.wikipedia.org/wiki/Brownian_motion'>Brownian Motion</a>, a continuous-time random process that can be thought of as the limit of a <a target="_blank" href='https://en.wikipedia.org/wiki/Random_Walk'>Random Walk</a>. The other ingredients that we need are a *mean value*, $$\mu$$, and a *variance*, $$\sigma$$, representing the "volatility" of variable that we are modeling.
+First of all, we need to specify what we mean with Geometric Brownian Motion. As the name suggests, the main ingredient of  such mathematical object is related to the concept of <a target="_blank" href='https://en.wikipedia.org/wiki/Brownian_motion'>Brownian Motion</a>, a continuous-time random process that can be thought of as the limit of a <a target="_blank" href='https://en.wikipedia.org/wiki/Random_Walk'>Random Walk</a>. The other ingredients that we need are a *mean value*, $$\mu$$, and a *variance*, $$\sigma^2$$, representing the "volatility" of variable that we are modeling.
 
 We generate our Brownian motion, $$W$$ starting from a Random Walk. It's worth mentioning some fundamental facts:
 1. $$W_0 = 0$$.
@@ -47,7 +47,7 @@ The final step is to calcualte the Geometric Brownian Motion
 S_t = S_0 \exp\bigg(\big(\mu - \dfrac{\sigma^2}{2}\big)t + \sigma W_t\bigg),
 \end{equation}
 
-which is implemented in line *41* in the code below. To make a practical example, I will get the values for the mean $$\mu$$ and the volatility $$\sigma$$ from the close prices of EURUSD. Moreover We assume that the close prices are normally distributed (more below) and perform a <a target="_blank" href='https://en.wikipedia.org/wiki/Maximum_likelihood_estimation'>Maximum Likelihood Estimation</a> as well as a <a target="_blank" href='https://en.wikipedia.org/wiki/Kernel_density_estimation'>Kernel Density Estimation</a> (KDE) on the EURUSD returns. Notice that the results are in $$10^{-4}$$ pips, thus the small numbers for $$\mu$$ and $$\sigma$$. We have all the ingredients to generate our GBMs. Time to write some code!
+which is implemented in line *41* in the code below. To make a practical example, I will get the values for the mean $$\mu$$ and the volatility $$\sigma^2$$ from the close prices of EURUSD. Moreover We assume that the close prices are normally distributed (more below) and perform a <a target="_blank" href='https://en.wikipedia.org/wiki/Maximum_likelihood_estimation'>Maximum Likelihood Estimation</a> as well as a <a target="_blank" href='https://en.wikipedia.org/wiki/Kernel_density_estimation'>Kernel Density Estimation</a> (KDE) on the EURUSD returns. Notice that the results are in $$10^{-4}$$ pips, thus the small numbers for $$\mu$$ and $$\sigma$$. We have all the ingredients to generate our GBMs. Time to write some code!
 
 
 ```python
