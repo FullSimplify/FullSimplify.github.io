@@ -123,7 +123,7 @@ The code is quite self-explanatory. First we load the data. We then define the r
 
 # Example: Option Pricing
 
-There are good introductions on the web about the Black-Scholes-Merton (BSM) model, as well as good books. I suggest for example the books <a target="_blank" href='https://www.amazon.com/Arbitrage-Theory-Continuous-Oxford-Finance/dp/019957474X'> Arbitrage Theory in Continuous Time </a> and <a target="_blank" href='https://www.degruyter.com/view/product/468290'> Stochastic Calculus for Fiannce II </a>. Due to its size, I do not develop a full review of the subject. I want to develop an example that allows to understand at a glance what we're talking about
+There are good introductions on the web about the Black-Scholes-Merton (BSM) model, as well as good books. I suggest for example the books <a target="_blank" href='https://www.amazon.com/Arbitrage-Theory-Continuous-Oxford-Finance/dp/019957474X'> Arbitrage Theory in Continuous Time </a> and <a target="_blank" href='https://www.degruyter.com/view/product/468290'> Stochastic Calculus for Fiannce II </a>. Here I propose an example that allows to understand at a glance what we're talking about
 
 The <a target="_blank" href='https://en.wikipedia.org/wiki/Black%E2%80%93Scholes_model'>Black-Scholes-Merton model </a> is an *option pricing model*, that is, it gives the price of a contract as function of the price of the underlying. In this sense it is not an absolute measure of the price of the contract. It can be shown that in an <a target="_blank" href='https://en.wikipedia.org/wiki/Efficient-market_hypothesisarbitrage-free'> arbitrage-free market</a>, the price of the option has to follow the BSM equation.
 
