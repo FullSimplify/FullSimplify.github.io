@@ -1,9 +1,9 @@
 ---
 layout: post
-description: Simulating the Geometric Brownian Motion. We discuss Random Walk, Wiener Processes and the Black Scholes Merton model.
-excerpt: Simulating the Geometric Brownian Motion. We discuss Random Walk, Wiener Processes and the Black Scholes Merton model.
+description: Simulating the Geometric Brownian Motion. We discuss Random Walk, Wiener Processes and the Black-Scholes-Merton model.
+excerpt: Simulating the Geometric Brownian Motion. We discuss Random Walk, Wiener Processes and the Black-Scholes-Merton model.
 title: "Simulating the Geometric Brownian Motion and an Option Pricing Example"
-subtitle: Simulating the Geometric Brownian Motion. We discuss Random Walk, Wiener Processes and the Black Scholes Merton model.
+subtitle: Simulating the Geometric Brownian Motion. We discuss Random Walk, Wiener Processes and the Black-Scholes-Merton model.
 excerpt_separator: <!--more-->
 icon: fa fa-area-chart
 date: 2015-02-20 12:09:42
