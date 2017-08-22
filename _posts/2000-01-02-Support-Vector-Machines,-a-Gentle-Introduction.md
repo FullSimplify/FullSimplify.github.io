@@ -123,24 +123,13 @@ So far we have defined the RKHS as a Hilbert space with funcionals that reproduc
 
 Thus, given a RKHS $$\mathcal{H}$$, we can define a reproducing kernel $$\kappa$$ associated with $$\mathcal{H}$$. Moreover, such kernel is *unique* and *positive definite*. The positive definiteness means that the matrix $$\mathbf{K}$$ with elements $$K_{i,j}=\kappa(x_i,x_j)$$, is positive definite. 
 
-## Kernel Matrix
+## Features
 
-We have seen that Reproducing kernels allow us to define a positive definite kernel matrix $$K$$
+We can adopt another point of view and ask ourselves what is in general a *kernel*. We can **define** a kernel to be a function $$\kappa:\mathcal{X}\times\mathcal{X}\rightarrow \mathbb{R}$$ if there exists a Hilbert space $$\mathcal{H}$$ and a **feature map**, $$\phi(x):\mathcal{X}\rightarrow\mathbb{H},$$ such that, $$\forall x,y\in\mathcal{X}:$$
 
-$$
-\mathbf{K} = 
-\begin{pmatrix}
-\kappa(x_1,x_1) & \ldots & \kappa(x_1,x_N)\\
- & \ddots & \\
-\kappa(x_N,x_1) & \ldots & \kappa(x_N,x_N)
-\end{pmatrix}
-$$
-
-Such kernels $$\kappa$$'s are called positive definite. The elements of $$\mathbf{K}$$ can be expressed as (see <a target="_blank" href='https://en.wikipedia.org/wiki/Positive-definite_matrix#Characterizations'>here</a>)
 \begin{equation}
-\kappa(x,y) = \Phi(x) \cdot \Phi(y),
+\kappa(x,y)=\langle \phi(x),\phi(y) \rangle_{\mathcal{H}}.
 \end{equation}
-where $$\Phi(x)$$ is a **feature vector**.
 
 ## Decisions. Optimal Separating Hyperplane
 
