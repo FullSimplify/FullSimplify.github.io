@@ -224,25 +224,46 @@ Coming Soon!
 
 ```python
 import numpy as np
-import random
 import matplotlib.pyplot as plt
+from sklearn import svm
 
-
-# generate the labels 1 and 0
-samp = np.ones(30)
-samp[:15] = 0
-random.shuffle(samp)
 
 # generate some data
-set1 = np.random.random((10, 2))+1
-set2 = np.random.random((10, 2))
-x = np.hstack((set1[:,0], set2[:,0], set2[:,1]+np.random.normal(0,0.1,10)))
-y = np.hstack((set1[:,1], set2[:,1], set2[:,1]+1.5))
+feature1 = np.random.random((10, 2))
+feature2 = feature1 + 0.5
 
-plt.plot(x, y, '.')
+plt.figure()
+plt.plot(feature1[:, 0], feature1[:, 1], '.')
+plt.plot(feature2[:, 0], feature2[:, 1], '.')
+
+# input data. rows are the "observations", columns are the features
+x = np.hstack((feature1[:, 0], feature2[:, 0]))
+y = np.hstack((feature1[:, 1], feature2[:, 1]))
+dataset = np.vstack((x, y)).T
+
+# generate the labels. Let's assume we have 3 labels. Can be strings or integers.
+# Let's say the 1/2 of our data is labeled 'a,', another 1/2 is 'b'
+labela = ['a'] * 10
+labelb = ['b'] * 10
+
+labels = labela + labelb
+
+# define the SVM
+classifier = svm.SVC()
+classifier.fit(dataset, labels)
+score = classifier.score(dataset, labels)
+
+fig = plt.subplot()
+plt.scatter(dataset[:, 0], dataset[:, 1])
+
+X, Y = np.meshgrid(np.arange(-.1, 2.1, .01), np.arange(-.1, 2.1, .01))
+Z = classifier.decision_function(np.c_[X.ravel(), Y.ravel()])
+
+Z = Z.reshape(X.shape)
+plt.contourf(X, Y, Z, cmap=plt.cm.RdBu, alpha=.8)
+plt.text(dataset[:, 0].max() + 0.4, dataset[:, 1].min(), ('score:' + '%.2f' % score).lstrip('0'),
+         size=15, horizontalalignment='right')
 plt.show()
-
-dataset = np.hstack((x.reshape(-1,1),y.reshape(-1,1)))
 ```
 
 
