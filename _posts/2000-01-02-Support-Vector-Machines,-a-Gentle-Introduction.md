@@ -137,7 +137,7 @@ $$\forall$$ positive definite kernel $$\Rightarrow$$ (M-A thm.) it is a reproduc
 
 ## Decisions. Optimal Separating Hyperplane
 
-Let's put the pieces together. Let us consider the feature vector with n elements/features: $$\Phi(x)=[x_1,x_2,x_3,…,x_n]$$. If we were classifying cars, for example, the features could be, car weight, year of production, engine power. Cars could be hard to classify based on these features. What if we add another feature, that is, *increase the dimension* of the feature space? This feature doesn't even have to be real, it's used to increase the discriminative power of our algorithm since the features that we have are "insufficient", i.e. our data looks like figure 1 below.
+Let's put the pieces together. Consider the feature vector with n elements/features: $$\Phi(x)=[x_1,x_2,x_3,…,x_n]$$. If we were classifying cars, for example, the features could be, car weight, year of production, engine power. Cars could be hard to classify based on these features. What if we add another feature, that is, *increase the dimension* of the feature space? This feature doesn't even have to be real, it's used to increase the discriminative power of our algorithm since the features that we have are "insufficient", i.e. our data looks like figure 1 below.
 
 
 ```python
