@@ -119,7 +119,7 @@ that, $$\forall x, y\in \mathcal{X}$$
 
 So far we have defined the RKHS as a Hilbert space with funcionals that "reproduce" a function $$f$$ in a continuous way. We then went on to characterize such functionals. Thanks to Reisz theorem we represent such functionals in a unique way with the inner product in $$\mathcal{H}$$, which led us to define the *reproducing kernel*, $$\kappa:\mathcal{X}\times\mathcal{X}\rightarrow\mathbb{R}$$.
 
-Thus, given a RKHS $$\mathcal{H}$$, we can define a reproducing kernel $$\kappa$$ associated with $$\mathcal{H}$$. Moreover, such kernel is *unique* and *positive definite*. The positive definiteness means that the matrix $$\mathbf{K}$$ with elements $$K_{i,j}=\kappa(x_i,x_j)$$, is positive definite. The uniqueness implies the fundamental fact that a Hilbert space $$\mathcal{H}$$ is a RKHS *if and only if* it has a reproducing kenrel. We will use this below.
+Thus, given a RKHS $$\mathcal{H}$$, we can define a reproducing kernel $$\kappa$$ associated with $$\mathcal{H}$$. Moreover, such kernel is *unique* and *positive definite*. The positive definiteness means that the matrix $$\mathbf{K}$$ with elements $$K_{i,j}=\kappa(x_i,x_j)$$, is positive definite. The uniqueness implies the fundamental fact that a Hilbert space $$\mathcal{H}$$ is a RKHS *if and only if* it has a reproducing kernel. We will use this below.
 
 ## Features
 
