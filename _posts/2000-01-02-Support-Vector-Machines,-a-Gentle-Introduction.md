@@ -213,9 +213,9 @@ As mentioned, support vector machines (SVMs) allow us to solve classification pr
 
 Linear SVMs separate the input data by finding an hyperplane between them such that the orthogonal distance between the plane and the closest point is maximized. Almost like in figure 3 above, but better, in an optimal, algorithmic way. Non Linear SVMs find non linear boundaries to separate subsets of points into classes (our labels).
 
-The problem of finding such hyperplane (or hypersurface in the non linear case) in an optimal way can be solved by optimization methods. One possibility is to fomalize the optimization as <a target='_blank' href='https://en.wikipedia.org/wiki/Quadratic_programming'>quadratic problem</a>. This is perhaps the core of the SVM machinery, but it's also a whole chapter in itself. Discussing such algorithms would take us very far, so we defer the discussion (hopefully) to future posts. 
+The problem of finding such hyperplane (or hypersurface in the non linear case) in an optimal way can be solved by optimization methods. One possibility is to fomalize the optimization as <a target='_blank' href='https://en.wikipedia.org/wiki/Quadratic_programming'>quadratic problem</a>. This is a separate topic, discussing such algorithms would take us very far, so we defer the discussion (hopefully) to future posts. 
 
-To recap, the main ingredients that we need are the labeled dataset to train the SVM, a kernel and an optimization method. We can use well established python modules for our SVMs. 
+From a practicap perspective, the main ingredients that we need are the labeled dataset to train the SVM, a kernel and an optimization method. We can use well established python modules for our SVMs. 
 
 ## An Example 
 
