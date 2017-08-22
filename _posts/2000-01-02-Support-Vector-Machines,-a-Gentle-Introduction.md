@@ -137,7 +137,7 @@ We have seen that every RKHS has a unique reproducing kernel which is also posit
 
 Given a RKHS, $$\mathcal{H}$$ $$\Rightarrow$$ it is possible to define a reproducing kernel with the inner product in $$\mathcal{H}$$
 
-$$\forall$$ positive definite $$\kappa$$ $$\Rightarrow$$ there is a unique RKHS with $$\kappa$$ being its reproducing kernel.
+$$\forall$$ positive definite kernel $$\Rightarrow$$ it is a reproducing kernel $$\Rightarrow$$ there is a unique RKHS with $$\kappa$$ being its reproducing kernel.
 
 ## Decisions. Optimal Separating Hyperplane
 
