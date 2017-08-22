@@ -99,48 +99,26 @@ There is plenty of material on books and internet about the background theory. I
 
 ## Reproducing Kernel Hilbert Space
 
-Let's consider a bounded functional over the Hilbert space $$\mathcal{H}$$ of functions $$f$$, that is,  $$\mathcal{L}_x:f \rightarrow f(x)$$. In practice $$\mathcal{L}$$ evaluates the function at point $$x$$. If the evaluation is bounded, then $$\mathcal{H}$$ is a reproducing kernel Hilbert space (RKHS) by definition. Thanks to Riesz theorem, such functional can be represented in a unique way, that is, $$\forall f \in \mathcal{H}$$ there is a unique $$\kappa_x \in \mathcal{H}$$ such that  $$\mathcal{L}[f]=\langle f,\kappa_x\rangle_H=f(x)$$, where the brackets represent the inner product in $$\mathcal{H}$$. Such $$\kappa_x$$ is the **reproducing kernel** of the Hilbert space $$\mathcal{H}$$. It is called reproducing kernel because of the property of "reproducing" $$f$$ evaluated at $$x$$.
+We start with two fundamental steps
+1. Let's consider a bounded functional over the Hilbert space $H$ of functions $$f$$, that is,  $$\mathcal{L}_x:f \rightarrow f(x)$$.  Notice that the functional $$\mathcal{L}_x$$ is somehow special, it evaluates the function at point $$x$$. 
+2. If the evaluation is bounded, that is if $$\mathcal{L}_x$$ is a continuous functional $$\forall x\in\mathcal{X}$$, then $$\mathcal{H}$$ is a **reproducing kernel Hilbert space** (RKHS) by definition. 
 
-Here we are really exploiting the power of Reisz theorem which allows us to reproduce "$$f$$ evaluated at $$x$$, $$f(x)$$", with a unique "rule" (or in a unique way), that is, which is an inner product. To make a step further we can say that the RKHS is the closure of $$\mathcal{H}$$ in the norm induced by such inner product.
+Thanks to Riesz theorem, we know that bounded linear functionals defined in a Hilbert space $$\mathcal{H}$$, can be represented in a unique way with the inner product in $\mathcal{H}$, that is, $$\forall f \in \mathcal{H}$$ there is a unique $$\kappa_x=\kappa(\cdot, x) \in \mathcal{H}, \forall x \in \mathcal{X}$$, such that  $$\mathcal{L}[f]=\langle f,\kappa_x\rangle_H$$, where the brackets represent the inner product in $$\mathcal{H}$$. 
 
-As mentioned above,  $$\kappa_x \in \mathcal{H}$$ for $$x \in \mathcal{X}$$. If we take $$f=\kappa_y \in \mathcal{H}$$ we can write
-\begin{equation}
-\kappa_y(x)=⟨\kappa_x,\kappa_y⟩
-\end{equation}
+We now ask $\kappa_x$ to have the fundamental *reproducing property* 
 
-thanks to the reproducing property. We could write a similar expression exchanging $$x$$ and $$y$$. More generally we can define a reproducing kernel $$\kappa:\mathcal{X}\times \mathcal{X} \rightarrow \mathbb{R}$$ as the inner product
-\begin{equation}
-\kappa(x,y)=⟨\kappa_x, \kappa_y⟩.
-\end{equation}
-Such kernel is symmetric and positive definite, that is the Gram (Kernel) matrix $$\mathbf{K}$$ with elements $$K_{i,j}=\kappa(x_i,x_j)$$, is positive definite.
+$$\forall x \in \mathcal{X},\forall f\in\mathcal{H},\;\;\langle f,\kappa(\cdot, x) \rangle = f(x).$$
 
+Such $$\kappa_x$$ is the **reproducing kernel** of the Hilbert space $$\mathcal{H}$$. It is called reproducing kernel because of the property of "reproducing" $$f$$ evaluated at $$x$$. It is made of two "ingredients", the reproducing property, and the fact that $$\kappa(\cdot, x) \in \mathcal{H}, \forall x \in \mathcal{X}$$.
 
-## Another point of view
+Since $$\kappa(\cdot, x)\in \mathcal{H}, \forall x\in\mathcal{X}$$, we can exploit the reproducing property and write
+that, $$\forall x, y\in \mathcal{X}$$
 
+$$\kappa(x,y)=\langle \kappa(\cdot, x), \kappa(\cdot, y)\rangle.$$
 
-We can restate the above from another (slightly formal) point of view. Consider $$x \in \mathcal{X}$$ and define the kernel function $$\kappa_x: \mathcal{X}\rightarrow \mathbb{R}$$ as
-\begin{equation}
-\kappa_x(\cdot) = \kappa(\cdot, x). 
-\end{equation}
-Let $$\mathcal{\tilde{H}}$$ be the space of functions that can be expanded in $$\kappa_x$$ for a generic $$x\in\mathcal{X}$$. Consider two such functions:
-\begin{equation}
-f = \sum\limits_i \,\alpha_i \, \kappa_{s_i}(\cdot) = \sum\limits_i \alpha_i \, \kappa(\cdot, s_i)\;\;\;\;g = \sum\limits_i \,\alpha_i\,\kappa_{t_i}(\cdot) = \sum\limits_i \alpha_i \, \kappa(\cdot, t_i).
-\end{equation}
-**Define** the inner product
-\begin{equation}
-\langle f, g \rangle = \sum\limits_{i}\sum\limits_j \, \alpha_i \, \beta_j \, \kappa(s_i, t_j).
-\end{equation}
-Thanks to the definition of $$f$$ and the definition of the inner product, we have (remember, kernel $$\kappa$$'s are symmetric)
-\begin{equation}
-\langle f, \kappa(\cdot, x) \rangle = \sum\limits_i \, \alpha_i \, \kappa(s_i,x) = f(x)\;\;\;\;\;f\in\mathcal{\tilde{H}}, \;x\in\mathcal{X},
-\end{equation}
-where the last equality is true thanks to the definition of $$f$$ given above. This is the **reproducing property**. It is possible to prove that the inner product just given, is in fact "well defined". 
+So far we have defined the RKHS as a Hilbert space with funcionals that reproduce a function $f$ in a continuous way. We then went on to characterize such functionals. Thanks to Reisz theorem we represent such functionals in a unique way with the inner product in $$\mathcal{H}$$, which led us to define the *reproducing kernel*, $$\kappa:\mathcal{X}\times\mathcal{X}\rightarrow\mathbb{R}$$.
 
-_The RKHS is the closure of $$\,\mathbf{\tilde{H}}\,$$ in the norm induced by the scalar product $$\langle \cdot, \cdot \rangle$$ defined above_.
-
-It can also be shown that if a Hilbert space $$\mathcal{H}$$ has kernel functions $$\kappa_x\in \mathcal{H}, \forall x\in\mathcal{X}$$ with the reproducing property ($$\langle f, \kappa_x \rangle = f(x),\forall f\in\mathcal{H}, x\in\mathcal{X}$$), then $$\kappa$$ is 
-<a target="_blank" href='https://en.wikipedia.org/wiki/Mercer%27s_theorem'>"Mercer"</a> (check it if you're not too tired!)
-
+It's worth mentioning that if $$\mathcal{H}$$ is a RKHS, it has (it *existence property*) a *unique* reproducing kernel which is also *positive definite*. The positive definiteness means that the matrix $\mathbf{K}$ with elements $$K_{i,j}=\kappa(x_i,x_j)$$, is positive definite.
 
 ## Kernel Matrix
 
