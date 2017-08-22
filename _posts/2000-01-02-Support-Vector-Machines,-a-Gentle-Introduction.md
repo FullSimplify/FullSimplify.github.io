@@ -105,16 +105,16 @@ We start with two fundamental steps
 
 Thanks to Riesz theorem, we know that bounded linear functionals defined in a Hilbert space $$\mathcal{H}$$, can be represented in a unique way with the inner product in $\mathcal{H}$, that is, $$\forall f \in \mathcal{H}$$ there is a unique $$\kappa_x=\kappa(\cdot, x) \in \mathcal{H}, \forall x \in \mathcal{X}$$, such that  $$\mathcal{L}[f]=\langle f,\kappa_x\rangle_H$$, where the brackets represent the inner product in $$\mathcal{H}$$. 
 
-We now ask $\kappa_x$ to have the fundamental *reproducing property* 
+We now ask $$\kappa_x$$ to have the fundamental *reproducing property* 
 \begin{equaiton}
-\forall x \in \mathcal{X},\forall f\in\mathcal{H},\;\;\langle f,\kappa(\cdot, x) \rangle = f(x).
+\forall x \in \mathcal{X},\forall f\in\mathcal{H},\;\;\langle f,\kappa(\cdot, x) \rangle_{\mathcal{H}} = f(x).
 \end{equation}
 Such $$\kappa_x$$ is the **reproducing kernel** of the Hilbert space $$\mathcal{H}$$. It is called reproducing kernel because of the property of "reproducing" $$f$$ evaluated at $$x$$. It is made of two "ingredients", the reproducing property, and the fact that $$\kappa(\cdot, x) \in \mathcal{H}, \forall x \in \mathcal{X}$$.
 
 Since $$\kappa(\cdot, x)\in \mathcal{H}, \forall x\in\mathcal{X}$$, we can exploit the reproducing property and write
 that, $$\forall x, y\in \mathcal{X}$$
 \begin{equation}
-\kappa(x,y)=\langle \kappa(\cdot, x), \kappa(\cdot, y)\rangle.
+\kappa(x,y)=\langle \kappa(\cdot, x), \kappa(\cdot, y)\rangle_{\mathcal{H}}.
 \end{equation}
 So far we have defined the RKHS as a Hilbert space with funcionals that reproduce a function $f$ in a continuous way. We then went on to characterize such functionals. Thanks to Reisz theorem we represent such functionals in a unique way with the inner product in $$\mathcal{H}$$, which led us to define the *reproducing kernel*, $$\kappa:\mathcal{X}\times\mathcal{X}\rightarrow\mathbb{R}$$.
 
