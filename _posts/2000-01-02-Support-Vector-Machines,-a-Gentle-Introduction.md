@@ -217,9 +217,9 @@ The problem of finding such hyperplane (or hypersurface in the non linear case) 
 
 From a practicap perspective, the main ingredients that we need are the labeled dataset to train the SVM, a kernel and an optimization method. We can use well established python modules for our SVMs. 
 
-## An Example 
+## Example 1. Dual Label Classification
 
-Coming Soon! For now here's a worked out example. We classify two sets of points uniformly distributed and labeled with labels 'a' and 'b'.
+More explainations soon! For now here's a worked out example. We classify two sets of points uniformly distributed and labeled with labels 'a' and 'b'. 
 
 
 ```python
@@ -268,3 +268,6 @@ plt.show()
 
 ![png](/SVM_files/SVM_5_0.png?raw=true)
  
+## Example 2. Multi-label Classification
+
+Coming Soon!
