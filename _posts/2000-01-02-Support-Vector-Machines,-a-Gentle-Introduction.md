@@ -1,9 +1,9 @@
 ---
 layout: post
-description: An introduction to Support Vector Machines. We discuss about Classification, Reproducing Kernel Hilbert Spaces and more.
-excerpt: An introduction to Support Vector Machines. We discuss about Classification, Reproducing Kernel Hilbert Spaces and more.
+description: An introduction to Support Vector Machines. We discuss Classification, Reproducing Kernel Hilbert Spaces and more.
+excerpt: An introduction to Support Vector Machines. We discuss Classification, Reproducing Kernel Hilbert Spaces and more.
 title: "Support Vector Machines, a Gentle Introduction"
-subtitle: An introduction to Support Vector Machines. We discuss about Classification, Reproducing Kernel Hilbert Spaces and more.
+subtitle: An introduction to Support Vector Machines. We discuss Classification, Reproducing Kernel Hilbert Spaces and more.
 excerpt_separator: <!--more-->
 icon: fa fa-cogs
 date: 2015-01-20 12:09:42
