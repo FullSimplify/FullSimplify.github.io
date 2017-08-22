@@ -106,19 +106,19 @@ We start with two fundamental steps
 Thanks to Riesz theorem, we know that bounded linear functionals defined in a Hilbert space $$\mathcal{H}$$, can be represented in a unique way with the inner product in $\mathcal{H}$, that is, $$\forall f \in \mathcal{H}$$ there is a unique $$\kappa_x=\kappa(\cdot, x) \in \mathcal{H}, \forall x \in \mathcal{X}$$, such that  $$\mathcal{L}[f]=\langle f,\kappa_x\rangle_H$$, where the brackets represent the inner product in $$\mathcal{H}$$. 
 
 We now ask $\kappa_x$ to have the fundamental *reproducing property* 
-
-$$\forall x \in \mathcal{X},\forall f\in\mathcal{H},\;\;\langle f,\kappa(\cdot, x) \rangle = f(x).$$
-
+\begin{equaiton}
+\forall x \in \mathcal{X},\forall f\in\mathcal{H},\;\;\langle f,\kappa(\cdot, x) \rangle = f(x).
+\end{equation}
 Such $$\kappa_x$$ is the **reproducing kernel** of the Hilbert space $$\mathcal{H}$$. It is called reproducing kernel because of the property of "reproducing" $$f$$ evaluated at $$x$$. It is made of two "ingredients", the reproducing property, and the fact that $$\kappa(\cdot, x) \in \mathcal{H}, \forall x \in \mathcal{X}$$.
 
 Since $$\kappa(\cdot, x)\in \mathcal{H}, \forall x\in\mathcal{X}$$, we can exploit the reproducing property and write
 that, $$\forall x, y\in \mathcal{X}$$
-
-$$\kappa(x,y)=\langle \kappa(\cdot, x), \kappa(\cdot, y)\rangle.$$
-
+\begin{equation}
+\kappa(x,y)=\langle \kappa(\cdot, x), \kappa(\cdot, y)\rangle.
+\end{equation}
 So far we have defined the RKHS as a Hilbert space with funcionals that reproduce a function $f$ in a continuous way. We then went on to characterize such functionals. Thanks to Reisz theorem we represent such functionals in a unique way with the inner product in $$\mathcal{H}$$, which led us to define the *reproducing kernel*, $$\kappa:\mathcal{X}\times\mathcal{X}\rightarrow\mathbb{R}$$.
 
-It's worth mentioning that if $$\mathcal{H}$$ is a RKHS, it has necessarily a *unique* reproducing kernel which is also *positive definite*. The positive definiteness means that the matrix $$\mathbf{K}$$ with elements $$K_{i,j}=\kappa(x_i,x_j)$$, is positive definite.
+Such kernel $$\kappa$$ is expressed in terms of the inner product in $$\mathcal{H}$$ and it is *positive definite*. This is true in a reproducing kernel Hilbert Space. The positive definiteness means that the matrix $$\mathbf{K}$$ with elements $$K_{i,j}=\kappa(x_i,x_j)$$, is positive definite. Moreover, theorems guarantee its *existence* and *unicity* of such kernel.
 
 ## Kernel Matrix
 
