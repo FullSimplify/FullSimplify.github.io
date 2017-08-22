@@ -139,7 +139,7 @@ $$\forall$$ positive definite kernel $$\Rightarrow$$ (M-A thm.) it is a reproduc
 
 Sounds good? I know it's a lot of stuff and we just skimmed the surface! That was perhaps sufficient to trigger your interest and raise some questions.
 
-To fix the ideas,let us consider the feature vector with N elements/features: $$\Phi(x)=[x_1,x_2,x_3,…]$$. If we were classifying cars, for example, the features could be, car weight, year of production, engine power. Cars could be hard to classify based on these features. What if we add another feature, that is, *increase the dimension* of the feature space? This feature doesn't even have to be real, it's used to increase the discriminative power of our algorithm since the features that we have are "insufficient", i.e. our data looks like in the figures below.
+To fix the ideas,let us consider the feature vector with N elements/features: $$\Phi(x)=[x_1,x_2,x_3,…]$$. If we were classifying cars, for example, the features could be, car weight, year of production, engine power. Cars could be hard to classify based on these features. What if we add another feature, that is, *increase the dimension* of the feature space? This feature doesn't even have to be real, it's used to increase the discriminative power of our algorithm since the features that we have are "insufficient", i.e. our data looks like figure 1 below.
 
 
 ```python
