@@ -93,9 +93,7 @@ plt.show()
 ## A Few Mathematical Details
 
 
-There is plenty of material on books and internet about the background theory. I'm just giving a hint to fix some concepts, after all, this is a gentle introduction. *Feel free to skip this section* if you're more example oriented. Those really intrested in (the very intresting) theory can check the literature. I recommend the book written by <a target="_blank" href='http://www.cs.ubc.ca/~murphyk/MLbook/index.html'>Kevin P. Murphy</a>.
-
-
+There is plenty of material on books and internet about the background theory. I'm just giving a hint to fix some concepts, after all, this is a gentle introduction. *Feel free to skip this section* if you're more example oriented. Those really intrested in (the very intresting) theory can check the literature. I recommend the book written by <a target="_blank" href='http://www.cs.ubc.ca/~murphyk/MLbook/index.html'>Kevin P. Murphy</a>. In particular, for those intrested in Reproducing Kernel Hilbert Spaces I recommend the well written lecture <a target="_blank" href='http://www.stats.ox.ac.uk/~sejdinov/teaching/atml14/Theory_2014.pdf'>right here</a>.
 
 ## Reproducing Kernel Hilbert Space
 
@@ -139,7 +137,7 @@ We have seen that every RKHS has a unique reproducing kernel which is also posit
 
 ## Decisions. Optimal Separating Hyperplane
 
-Sounds good? We just skimmed the surface, but that was perhaps sufficient to trigger your interest and raise some questions.
+Sounds good? I know it's a lot of stuff and we just skimmed the surface! That was perhaps sufficient to trigger your interest and raise some questions.
 
 To fix the ideas,let us consider the feature vector with N elements/features: $$\Phi(x)=[x_1,x_2,x_3,…]$$. If we were classifying cars, for example, the features could be, car weight, year of production, engine power. Cars could be hard to classify based on these features. What if we add another feature, that is, *increase the dimension* of the feature space? This feature doesn't even have to be real, it's used to increase the discriminative power of our algorithm since the features that we have are "insufficient", i.e. our data looks like in the figures below.
 
