@@ -131,6 +131,8 @@ We can adopt another point of view and ask ourselves what is in general a *kerne
 \kappa(x,y)=\langle \phi(x),\phi(y) \rangle_{\mathcal{H}}.
 \end{equation}
 
+Every reproducing kernel can be represented with an inner product of feature maps.
+
 ### Summary
 
 We have seen that every RKHS has a unique reproducing kernel which is also positive definite. Such kernel can be represented with the inner product of the RKHS. We add one piece to the puzzle. Thanks to <a target="_blank" href='https://en.wikipedia.org/wiki/Reproducing_kernel_Hilbert_space#Moore.E2.80.93Aronszajn_theorem'> Moore-Aronszain</a> theorem, every positive definite kernel is a reproducing kernel.
