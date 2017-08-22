@@ -64,7 +64,7 @@ $$\forall$$ positive definite kernel $$\Rightarrow$$ (M-A thm.) it is a reproduc
 
 ## Kernels practically
 
-In general, we have objects $$x$$, belonging to a space $$\mathcal{X}$$. Our concept of similarity is embodied by a function $$\mathcal{X}\times\mathcal{X}\rightarrow\mathbb{R}$$ that we call Kernel Function. It is a measure of the distance between $$x$$ and $$y$$. It is natural to choose a kernel that is symmetric ($$κ(x,y)=κ(y,x)κ(x,y)=κ(y,x)$$), that is, the similarity or distance between $$x$$ and $$y$$ is the same as the distance between $$y$$  and $$x$$, and non-negative ($$κ(x,y)\geq 0$$), but it doesn't need be.
+In general, we have objects $$x$$, belonging to a space $$\mathcal{X}$$. Our concept of similarity is embodied by a function $$\mathcal{X}\times\mathcal{X}\rightarrow\mathbb{R}$$ that we call Kernel Function. It is a measure of the distance between $$x$$ and $$y$$. It is natural to choose a kernel that is symmetric ($$κ(x,y)=κ(y,x)κ(x,y)=κ(y,x)$$), that is, the similarity or distance between $$x$$ and $$y$$ is the same as the distance between $$y$$  and $$x$$.
 
 Two popular choices are the Gaussian kernel,
 \begin{equation}
