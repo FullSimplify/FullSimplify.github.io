@@ -118,12 +118,11 @@ $$\kappa(x,y)=\langle \kappa(\cdot, x), \kappa(\cdot, y)\rangle.$$
 
 So far we have defined the RKHS as a Hilbert space with funcionals that reproduce a function $f$ in a continuous way. We then went on to characterize such functionals. Thanks to Reisz theorem we represent such functionals in a unique way with the inner product in $$\mathcal{H}$$, which led us to define the *reproducing kernel*, $$\kappa:\mathcal{X}\times\mathcal{X}\rightarrow\mathbb{R}$$.
 
-It's worth mentioning that if $$\mathcal{H}$$ is a RKHS, it has (it *existence property*) a *unique* reproducing kernel which is also *positive definite*. The positive definiteness means that the matrix $\mathbf{K}$ with elements $$K_{i,j}=\kappa(x_i,x_j)$$, is positive definite.
+It's worth mentioning that if $$\mathcal{H}$$ is a RKHS, it has necessarily a *unique* reproducing kernel which is also *positive definite*. The positive definiteness means that the matrix $\mathbf{K}$ with elements $$K_{i,j}=\kappa(x_i,x_j)$$, is positive definite.
 
 ## Kernel Matrix
 
-
-The result is then that some kernel functions allow us to define a positive definite kernel matrix 
+We have seen that Reproducing kernels allow us to define a positive definite kernel matrix $$K$$
 
 $$
 \mathbf{K} = 
