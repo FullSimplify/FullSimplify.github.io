@@ -12,13 +12,11 @@ categories:
 
 In a classification problem we want to classify or label a new observation, having trained our model with a set of observations whose class is known.<!--more--> One approach is to think that all elements that belong to the same class are *similar* in some way. We thus need a concept of similarity or *distance*.
 
-For example, if we had a box of apples and we wanted to classify based on color, we would like our model to take the apples as input, the new observation being taking an apple from the box and checking its color, and give us its label as output. For example, **1** could be *red apple*, and **0** could be *green apple*. We then have two classes, 1 and 0. Some apples though, are not entirely red or green, and it's hard to say if they should be labeled 1 or 0. Here's where the concept of distance comes to help. Simply speaking, if the apple is sufficiently green, or more green than red, our model should label it as 0.
+For example, if we had to classify cars, we could choose some fundamental *features*, such as weight, engine power and mileage. Having a list of cars with such information divided in two parts, *good* cars and *bad* cars, can we classify the next car we come across as being part of the group of *good* cars or *bad* cars?
 
-How does the model know what's green or red to begin with? We need to train our model on apples we know for sure are red or green. Applying the concept of distance to a new apple that we pick from the box, we can compare the new apple with the previously observed green and red apples.
-
+We need a model to distinguish the good cars from the bad ones. How does the model do that? First of all we *train* our model on a known set of good and bad cars. Then, we need a concept of distance to compare the features of the good (bad) cars to the features of the next car we come across. If the distance is small, we are quite sure that the car is good (bad).
 
 ## Kernels
-
 
 In general, rather than apples we have objects $$x$$, belonging to a space $$\mathcal{X}$$. Our concept of similarity is embodied by a function $$\mathcal{X}\times\mathcal{X}\rightarrow\mathbb{R}$$ that we call Kernel Function. It is a measure of the distance between $$x$$ and $$y$$. It is natural to choose a kernel that is symmetric ($$κ(x,y)=κ(y,x)κ(x,y)=κ(y,x)$$), that is, the similarity or distance between $$x$$ and $$y$$ is the same as the distance between $$y$$  and $$x$$, and non-negative ($$κ(x,y)\geq 0$$), but it doesn't need be.
 
