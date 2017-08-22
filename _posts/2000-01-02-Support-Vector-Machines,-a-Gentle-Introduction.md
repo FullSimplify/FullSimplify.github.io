@@ -20,7 +20,7 @@ We need a model to distinguish the good cars from the bad ones. How does the mod
 ## A Few Mathematical Details
 
 
-There is plenty of material on books and internet about the background theory. I'm just giving a hint to fix some concepts, after all, this is a gentle introduction. *Feel free to skip this section* if you're more example oriented. Those really intrested in (the very intresting) theory can check the literature. I recommend the book written by <a target="_blank" href='http://www.cs.ubc.ca/~murphyk/MLbook/index.html'>Kevin P. Murphy</a>. Other resources are <a target="_blank" href='http://www.stats.ox.ac.uk/~sejdinov/teaching/atml14/Theory_2014.pdf'>right here</a> and <a target="_blank" href='http://hunch.net/~learning/aron.pdf'> here </a>, a paper by N. Aronszajn entitled "*Theory of Reproducing Kernels*".
+There is plenty of material on books and internet about the background theory. I'm just giving a hint to fix some concepts, after all, this is a gentle introduction. *Feel free to skip this section* if you're more example oriented. Those really intrested in (the very intresting) theory can check the literature. I recommend the book written by <a target="_blank" href='http://www.cs.ubc.ca/~murphyk/MLbook/index.html'>Kevin P. Murphy</a>. Other resources are <a target="_blank" href='http://www.stats.ox.ac.uk/~sejdinov/teaching/atml14/Theory_2014.pdf'>right here</a> and <a target="_blank" href='http://hunch.net/~learning/aron.pdf'> here </a>. The last reference is a paper by N. Aronszajn entitled "*Theory of Reproducing Kernels*".
 
 ## Reproducing Kernel Hilbert Space
 
