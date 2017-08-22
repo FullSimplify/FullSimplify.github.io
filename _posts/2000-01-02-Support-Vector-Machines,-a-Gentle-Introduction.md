@@ -219,7 +219,7 @@ From a practicap perspective, the main ingredients that we need are the labeled 
 
 ## An Example 
 
-Coming Soon!
+Coming Soon! For now here's a worked out example. We classify two sets of points uniformly distributed and labeled with labels 'a' and 'b'.
 
 
 ```python
