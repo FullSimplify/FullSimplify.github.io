@@ -56,7 +56,7 @@ Instead of starting from RKHSs, we can adopt another point of view and start fro
 \kappa(x,y)=\langle \phi(x),\phi(y) \rangle_{\mathcal{H}}.
 \end{equation}
 
-Such kernel is necessarily **positive definite**, thanks to the positive definiteness property of the <a target="_blank" href='https://en.wikipedia.org/wiki/Inner_product_space'> inner product</a> in $$\mathcal{H}$$. Furthermore, thanks to the<a target="_blank" href='https://en.wikipedia.org/wiki/Reproducing_kernel_Hilbert_space#Moore.E2.80.93Aronszajn_theorem'> Moore-Aronszajn</a> (M-A) theorem, every positive definite kernel is a reproducing kernel. To summarize:
+Such kernel is necessarily **positive definite**, thanks to the positive definiteness property of the <a target="_blank" href='https://en.wikipedia.org/wiki/Inner_product_space'> inner product</a> in $$\mathcal{H}$$. Furthermore, thanks to the<a target="_blank" href='https://en.wikipedia.org/wiki/Reproducing_kernel_Hilbert_space#Moore.E2.80.93Aronszajn_theorem'> Moore-Aronszajn</a> (M-A) theorem, to every positive definite kernel there corresponds one and only one class of functions $$f$$ that forms a Hilbert space admitting $$\kappa$$ as a reproducing kernel. To summarize:
 
 Given a RKHS, $$\mathcal{H}$$ $$\Rightarrow$$ it is possible to define the unique (Riesz Thm.) reproducing kernel with the inner product in $$\mathcal{H}$$
 
