@@ -129,7 +129,7 @@ We can adopt another point of view and ask ourselves what is in general a *kerne
 \kappa(x,y)=\langle \phi(x),\phi(y) \rangle_{\mathcal{H}}.
 \end{equation}
 
-Every reproducing kernel can be represented with an inner product of feature maps.
+*Every reproducing kernel can be represented with an inner product of feature maps.* We have reached the conclusion that we can represent a reproducing kernel in a RKHS with the formula above.
 
 ### Summary
 
