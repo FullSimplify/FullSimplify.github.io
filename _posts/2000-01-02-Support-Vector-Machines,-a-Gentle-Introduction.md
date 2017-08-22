@@ -266,5 +266,5 @@ plt.show()
 ```
 
 
-![png](/SVM_files/SVM_6_0.png?raw=true)
+![png](/SVM_files/SVM_5_0.png?raw=true)
  
