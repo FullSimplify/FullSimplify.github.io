@@ -123,7 +123,7 @@ Thus, given a RKHS $$\mathcal{H}$$, we can define a reproducing kernel $$\kappa$
 
 ## Features
 
-Instead of starting from RKHSs, we can adopt another point of view and start from the definition of *kernel*. We can **define** a kernel to be a function $$\kappa:\mathcal{X}\times\mathcal{X}\rightarrow \mathbb{R}$$ if there exists a Hilbert space $$\mathcal{H}$$ and a **feature map**, $$\phi(x):\mathcal{X}\rightarrow\mathbb{H},$$ such that, $$\forall x,y\in\mathcal{X}:$$
+Instead of starting from RKHSs, we can adopt another point of view and start from the definition of *kernel*. The function $$\kappa:\mathcal{X}\times\mathcal{X}\rightarrow \mathbb{R}$$ is a kernel if there exists a Hilbert space $$\mathcal{H}$$ and a **feature map**, $$\phi(x):\mathcal{X}\rightarrow\mathbb{H},$$ such that, $$\forall x,y\in\mathcal{X}:$$
 
 \begin{equation}
 \kappa(x,y)=\langle \phi(x),\phi(y) \rangle_{\mathcal{H}}.
