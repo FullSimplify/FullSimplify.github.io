@@ -98,7 +98,7 @@ There is plenty of material on books and internet about the background theory. I
 ## Reproducing Kernel Hilbert Space
 
 We start with two fundamental steps
-1. Let's consider a bounded functional over the Hilbert space $H$ of functions $$f$$, that is,  $$\mathcal{L}_x:f \rightarrow f(x)$$.  Notice that the functional $$\mathcal{L}_x$$ is somehow special, it evaluates the function at point $$x$$. 
+1. Let's consider a bounded functional over the Hilbert space $$\mathcal{H}$$ of functions $$f$$, that is,  $$\mathcal{L}_x:f \rightarrow f(x)$$.  Notice that the functional $$\mathcal{L}_x$$ is somehow special, it evaluates the function at point $$x$$. 
 2. If the evaluation is bounded, that is if $$\mathcal{L}_x$$ is a continuous functional $$\forall x\in\mathcal{X}$$, then $$\mathcal{H}$$ is a **reproducing kernel Hilbert space** (RKHS) by definition. 
 
 Thanks to Riesz theorem, we know that bounded linear functionals defined in a Hilbert space $$\mathcal{H}$$, can be represented in a unique way with the inner product in $$\mathcal{H}$$, that is, $$\forall f \in \mathcal{H}$$ there is a unique $$\kappa_x=\kappa(\cdot, x) \in \mathcal{H}, \forall x \in \mathcal{X}$$, such that  $$\mathcal{L}[f]=\langle f,\kappa_x\rangle_H$$, where the brackets represent the inner product in $$\mathcal{H}$$. 
