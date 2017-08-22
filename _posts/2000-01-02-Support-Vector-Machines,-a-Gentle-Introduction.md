@@ -129,11 +129,11 @@ Instead of starting from RKHSs, we can adopt another point of view and start fro
 \kappa(x,y)=\langle \phi(x),\phi(y) \rangle_{\mathcal{H}}.
 \end{equation}
 
-Such kernel is necessarily **positive definite**. Thanks to the<a target="_blank" href='https://en.wikipedia.org/wiki/Reproducing_kernel_Hilbert_space#Moore.E2.80.93Aronszajn_theorem'> Moore-Aronszajn</a> theorem, every positive definite kernel is a reproducing kernel. To summarize:
+Such kernel is necessarily **positive definite**. Thanks to the<a target="_blank" href='https://en.wikipedia.org/wiki/Reproducing_kernel_Hilbert_space#Moore.E2.80.93Aronszajn_theorem'> Moore-Aronszajn</a> (M-A) theorem, every positive definite kernel is a reproducing kernel. To summarize:
 
 Given a RKHS, $$\mathcal{H}$$ $$\Rightarrow$$ it is possible to define a reproducing kernel with the inner product in $$\mathcal{H}$$
 
-$$\forall$$ positive definite kernel $$\Rightarrow$$ it is a reproducing kernel $$\Rightarrow$$ (remember the "if and only if" above) there is a unique RKHS with $$\kappa$$ being its reproducing kernel.
+$$\forall$$ positive definite kernel $$\Rightarrow$$ (M-A thm.) it is a reproducing kernel $$\Rightarrow$$ (remember the "if and only if" above) there is a unique RKHS with $$\kappa$$ being its reproducing kernel.
 
 ## Decisions. Optimal Separating Hyperplane
 
