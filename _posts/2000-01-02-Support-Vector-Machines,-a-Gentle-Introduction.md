@@ -14,7 +14,7 @@ In a classification problem we want to classify or label a new observation, havi
 
 For example, if we had to classify cars, we could choose some fundamental *features*, such as weight, engine power and mileage. Having a list of cars with such information divided in two parts, *good* cars and *bad* cars, can we classify the next car we come across as being part of the group of *good* cars or *bad* cars?
 
-We need a model to distinguish the good cars from the bad ones. How does the model do that? First of all we *train* our model on a known set of good and bad cars. Then, we need a concept of distance to compare the features of the good (bad) cars to the features of the next car we come across. If the distance is small, we are quite sure that the car is good (bad).
+We need a model to distinguish the good cars from the bad ones. How does the model do that? First of all we *train* our model on a known set of good and bad cars. Then, we need a concept of distance to compare the features of the good (bad) cars to the features of the next car we come across. Our concept of distance can't really tell us if two cars (or two documents, or two audio files...) are distant, but it tells us if features are distant. If the distance between the features of the good (bad) cars and the car under observation is small, we are quite sure that the car is good (bad).
 
 ## Kernels
 
