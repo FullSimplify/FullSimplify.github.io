@@ -232,7 +232,7 @@ from sklearn import svm
 feature1 = np.random.random((10, 2))
 feature2 = feature1 + 0.5
 
-plt.figure()
+plt.figure(figsize=(10,8))
 plt.plot(feature1[:, 0], feature1[:, 1], '.')
 plt.plot(feature2[:, 0], feature2[:, 1], '.')
 
@@ -253,7 +253,6 @@ classifier = svm.SVC()
 classifier.fit(dataset, labels)
 score = classifier.score(dataset, labels)
 
-fig = plt.subplot()
 plt.scatter(dataset[:, 0], dataset[:, 1])
 
 X, Y = np.meshgrid(np.arange(-.1, 2.1, .01), np.arange(-.1, 2.1, .01))
@@ -267,5 +266,5 @@ plt.show()
 ```
 
 
-![png](/SVM_files/SVM_5_0.png?raw=true)
+![png](/SVM_files/SVM_6_0.png?raw=true)
  
