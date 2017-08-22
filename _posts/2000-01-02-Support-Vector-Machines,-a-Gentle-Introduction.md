@@ -107,7 +107,7 @@ We now ask $$\kappa_x$$ to have the fundamental *reproducing property*
 \begin{equation}
 \forall x \in \mathcal{X},\forall f\in\mathcal{H},\;\;\langle f,\kappa(\cdot, x) \rangle_{\mathcal{H}} = f(x).
 \end{equation}
-Such $$\kappa_x$$ is the **reproducing kernel** of the Hilbert space $$\mathcal{H}$$. It is called reproducing kernel because of the property of "reproducing" $$f$$ evaluated at $$x$$. It is made of two "ingredients", the reproducing property, and the fact that $$\kappa(\cdot, x) \in \mathcal{H}, \forall x \in \mathcal{X}$$.
+Such $$\kappa_x$$ is the **reproducing kernel** of the Hilbert space $$\mathcal{H}$$. As the name suggests, it allows us to "evaluate" $$f$$ at $$x$$, $$f$$ being the "input" function and $$f(x)$$ being the output of the inner product. It is made of two "ingredients", the reproducing property above, and the fact that $$\kappa(\cdot, x) \in \mathcal{H}, \forall x \in \mathcal{X}$$.
 
 Since $$\kappa(\cdot, x)\in \mathcal{H}, \forall x\in\mathcal{X}$$, we can exploit the reproducing property and write
 that, $$\forall x, y\in \mathcal{X}$$
