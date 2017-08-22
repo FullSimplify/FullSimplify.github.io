@@ -135,6 +135,10 @@ We can adopt another point of view and ask ourselves what is in general a *kerne
 
 We have seen that every RKHS has a unique reproducing kernel which is also positive definite. Such kernel can be represented with the inner product of the RKHS. We add one piece to the puzzle. Thanks to <a target="_blank" href='https://en.wikipedia.org/wiki/Reproducing_kernel_Hilbert_space#Moore.E2.80.93Aronszajn_theorem'> Moore-Aronszain</a> theorem, every positive definite kernel is a reproducing kernel.
 
+Given a RKHS,$$\mathcal{H}$$ $$\Rightarrow$$ it is possible to define a reproducing kernel with the inner product in $$\mathcal{H}$$
+
+$$\forall$$ positive definite $$\kappa$$ $$\Rightarrow$$ there is a unique RKHS with $$\kappa$$ being its reproducing kernel.
+
 ## Decisions. Optimal Separating Hyperplane
 
 Sounds good? I know it's a lot of stuff and we just skimmed the surface! That was perhaps sufficient to trigger your interest and raise some questions.
