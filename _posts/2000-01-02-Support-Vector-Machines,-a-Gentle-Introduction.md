@@ -16,9 +16,55 @@ For example, if we had to classify cars, we could choose some fundamental *featu
 
 We need a model to distinguish the good cars from the bad ones. How does the model do that? First of all we *train* our model on a known set of good and bad cars. Then, we need a concept of distance to compare the features of the good (bad) cars to the features of the next car we come across. Our concept of distance can't really tell us if two cars (or two documents, or two audio files...) are distant, but it tells us if features are distant. If the distance between the features of the good (bad) cars and the car under observation is small, we are quite sure that the car is good (bad).
 
-## Kernels
 
-In general, rather than apples we have objects $$x$$, belonging to a space $$\mathcal{X}$$. Our concept of similarity is embodied by a function $$\mathcal{X}\times\mathcal{X}\rightarrow\mathbb{R}$$ that we call Kernel Function. It is a measure of the distance between $$x$$ and $$y$$. It is natural to choose a kernel that is symmetric ($$κ(x,y)=κ(y,x)κ(x,y)=κ(y,x)$$), that is, the similarity or distance between $$x$$ and $$y$$ is the same as the distance between $$y$$  and $$x$$, and non-negative ($$κ(x,y)\geq 0$$), but it doesn't need be.
+## A Few Mathematical Details
+
+
+There is plenty of material on books and internet about the background theory. I'm just giving a hint to fix some concepts, after all, this is a gentle introduction. *Feel free to skip this section* if you're more example oriented. Those really intrested in (the very intresting) theory can check the literature. I recommend the book written by <a target="_blank" href='http://www.cs.ubc.ca/~murphyk/MLbook/index.html'>Kevin P. Murphy</a>. Other resources are the well written lectures by D. Sejdinovic and A. Gretton <a target="_blank" href='http://www.stats.ox.ac.uk/~sejdinov/teaching/atml14/Theory_2014.pdf'>right here</a> and <a target="_blank" href='http://www.gatsby.ucl.ac.uk/~gretton/coursefiles/lecture4_introToRKHS.pdf'> here </a>.
+
+## Reproducing Kernel Hilbert Space
+
+We start with two fundamental steps
+1. Let's consider a bounded functional over the Hilbert space $$\mathcal{H}$$ of functions $$f$$, that is,  $$\mathcal{L}_x:f \rightarrow f(x)$$.  Notice that the functional $$\mathcal{L}_x$$ is somehow special, it evaluates the function at point $$x$$. 
+2. If the evaluation is bounded, that is if $$\mathcal{L}_x$$ is a continuous functional $$\forall x\in\mathcal{X}$$, then $$\mathcal{H}$$ is a **reproducing kernel Hilbert space** (RKHS) by definition. 
+
+Thanks to Riesz theorem, we know that bounded linear functionals defined in a Hilbert space $$\mathcal{H}$$, can be represented in a unique way with the inner product in $$\mathcal{H}$$, that is, $$\forall f \in \mathcal{H}$$ there is a unique $$\kappa_x=\kappa(\cdot, x) \in \mathcal{H}, \forall x \in \mathcal{X}$$, such that  $$\mathcal{L}[f]=\langle f,\kappa_x\rangle_H$$, where the brackets represent the inner product in $$\mathcal{H}$$. 
+
+We now ask $$\kappa_x$$ to have the fundamental *reproducing property* 
+\begin{equation}
+\forall x \in \mathcal{X},\forall f\in\mathcal{H},\;\;\langle f,\kappa(\cdot, x) \rangle_{\mathcal{H}} = f(x).
+\end{equation}
+Such $$\kappa_x$$ is the **reproducing kernel** of the Hilbert space $$\mathcal{H}$$. As the name suggests, it allows us to "evaluate" $$f$$ at $$x$$, $$f$$ being the "input" function and $$f(x)$$ being the output of the inner product. It is made of two "ingredients", the reproducing property above, and the fact that $$\kappa(\cdot, x) \in \mathcal{H}, \forall x \in \mathcal{X}$$.
+
+Since $$\kappa(\cdot, x)\in \mathcal{H}, \forall x\in\mathcal{X}$$, we can exploit the reproducing property and write
+that, $$\forall x, y\in \mathcal{X}$$
+\begin{equation}
+\kappa(x,y)=\langle \kappa(\cdot, x), \kappa(\cdot, y)\rangle_{\mathcal{H}}.
+\end{equation}
+
+#### Recap
+
+So far we have defined the RKHS as a Hilbert space with funcionals that "reproduce" a function $$f$$ in a continuous way. We then went on to characterize such functionals. Thanks to Reisz theorem we represent such functionals in a unique way with the inner product in $$\mathcal{H}$$, which led us to define the *reproducing kernel*, $$\kappa:\mathcal{X}\times\mathcal{X}\rightarrow\mathbb{R}$$.
+
+Thus, given a RKHS $$\mathcal{H}$$, we can define a reproducing kernel $$\kappa$$ associated with $$\mathcal{H}$$. Moreover, such kernel is *unique* and *positive definite*. The positive definiteness means that the matrix $$\mathbf{K}$$ with elements $$K_{i,j}=\kappa(x_i,x_j)$$, is positive definite. The uniqueness implies the fundamental fact that a Hilbert space $$\mathcal{H}$$ is a RKHS *if and only if* it has a reproducing kernel. We will use this below.
+
+## Features
+
+Instead of starting from RKHSs, we can adopt another point of view and start from the definition of *kernel*. The function $$\kappa:\mathcal{X}\times\mathcal{X}\rightarrow \mathbb{R}$$ is a kernel if there exists a Hilbert space $$\mathcal{H}$$ and a **feature map**, $$\phi(x):\mathcal{X}\rightarrow\mathcal{H},$$ such that, $$\forall x,y\in\mathcal{X}:$$
+
+\begin{equation}
+\kappa(x,y)=\langle \phi(x),\phi(y) \rangle_{\mathcal{H}}.
+\end{equation}
+
+Such kernel is necessarily **positive definite**, thanks to the positive definiteness property of the <a target="_blank" href='https://en.wikipedia.org/wiki/Inner_product_space'> inner product</a> in $$\mathcal{H}$$. Furthermore, thanks to the<a target="_blank" href='https://en.wikipedia.org/wiki/Reproducing_kernel_Hilbert_space#Moore.E2.80.93Aronszajn_theorem'> Moore-Aronszajn</a> (M-A) theorem, every positive definite kernel is a reproducing kernel. To summarize:
+
+Given a RKHS, $$\mathcal{H}$$ $$\Rightarrow$$ it is possible to define the unique (Riesz Thm.) reproducing kernel with the inner product in $$\mathcal{H}$$
+
+$$\forall$$ positive definite kernel $$\Rightarrow$$ (M-A thm.) it is a reproducing kernel $$\Rightarrow$$ (remember the "if and only if" above) there is a unique RKHS with $$\kappa$$ being its reproducing kernel.
+
+## Kernels practically
+
+In general, we have objects $$x$$, belonging to a space $$\mathcal{X}$$. Our concept of similarity is embodied by a function $$\mathcal{X}\times\mathcal{X}\rightarrow\mathbb{R}$$ that we call Kernel Function. It is a measure of the distance between $$x$$ and $$y$$. It is natural to choose a kernel that is symmetric ($$κ(x,y)=κ(y,x)κ(x,y)=κ(y,x)$$), that is, the similarity or distance between $$x$$ and $$y$$ is the same as the distance between $$y$$  and $$x$$, and non-negative ($$κ(x,y)\geq 0$$), but it doesn't need be.
 
 Two popular choices are the Gaussian kernel,
 \begin{equation}
@@ -86,52 +132,6 @@ plt.show()
 
 
 ![png](/SVM_files/SVM_1_1.png?raw=true)
-
-
-## A Few Mathematical Details
-
-
-There is plenty of material on books and internet about the background theory. I'm just giving a hint to fix some concepts, after all, this is a gentle introduction. *Feel free to skip this section* if you're more example oriented. Those really intrested in (the very intresting) theory can check the literature. I recommend the book written by <a target="_blank" href='http://www.cs.ubc.ca/~murphyk/MLbook/index.html'>Kevin P. Murphy</a>. Other resources are the well written lectures by D. Sejdinovic and A. Gretton <a target="_blank" href='http://www.stats.ox.ac.uk/~sejdinov/teaching/atml14/Theory_2014.pdf'>right here</a> and <a target="_blank" href='http://www.gatsby.ucl.ac.uk/~gretton/coursefiles/lecture4_introToRKHS.pdf'> here </a>.
-
-## Reproducing Kernel Hilbert Space
-
-We start with two fundamental steps
-1. Let's consider a bounded functional over the Hilbert space $$\mathcal{H}$$ of functions $$f$$, that is,  $$\mathcal{L}_x:f \rightarrow f(x)$$.  Notice that the functional $$\mathcal{L}_x$$ is somehow special, it evaluates the function at point $$x$$. 
-2. If the evaluation is bounded, that is if $$\mathcal{L}_x$$ is a continuous functional $$\forall x\in\mathcal{X}$$, then $$\mathcal{H}$$ is a **reproducing kernel Hilbert space** (RKHS) by definition. 
-
-Thanks to Riesz theorem, we know that bounded linear functionals defined in a Hilbert space $$\mathcal{H}$$, can be represented in a unique way with the inner product in $$\mathcal{H}$$, that is, $$\forall f \in \mathcal{H}$$ there is a unique $$\kappa_x=\kappa(\cdot, x) \in \mathcal{H}, \forall x \in \mathcal{X}$$, such that  $$\mathcal{L}[f]=\langle f,\kappa_x\rangle_H$$, where the brackets represent the inner product in $$\mathcal{H}$$. 
-
-We now ask $$\kappa_x$$ to have the fundamental *reproducing property* 
-\begin{equation}
-\forall x \in \mathcal{X},\forall f\in\mathcal{H},\;\;\langle f,\kappa(\cdot, x) \rangle_{\mathcal{H}} = f(x).
-\end{equation}
-Such $$\kappa_x$$ is the **reproducing kernel** of the Hilbert space $$\mathcal{H}$$. As the name suggests, it allows us to "evaluate" $$f$$ at $$x$$, $$f$$ being the "input" function and $$f(x)$$ being the output of the inner product. It is made of two "ingredients", the reproducing property above, and the fact that $$\kappa(\cdot, x) \in \mathcal{H}, \forall x \in \mathcal{X}$$.
-
-Since $$\kappa(\cdot, x)\in \mathcal{H}, \forall x\in\mathcal{X}$$, we can exploit the reproducing property and write
-that, $$\forall x, y\in \mathcal{X}$$
-\begin{equation}
-\kappa(x,y)=\langle \kappa(\cdot, x), \kappa(\cdot, y)\rangle_{\mathcal{H}}.
-\end{equation}
-
-#### Recap
-
-So far we have defined the RKHS as a Hilbert space with funcionals that "reproduce" a function $$f$$ in a continuous way. We then went on to characterize such functionals. Thanks to Reisz theorem we represent such functionals in a unique way with the inner product in $$\mathcal{H}$$, which led us to define the *reproducing kernel*, $$\kappa:\mathcal{X}\times\mathcal{X}\rightarrow\mathbb{R}$$.
-
-Thus, given a RKHS $$\mathcal{H}$$, we can define a reproducing kernel $$\kappa$$ associated with $$\mathcal{H}$$. Moreover, such kernel is *unique* and *positive definite*. The positive definiteness means that the matrix $$\mathbf{K}$$ with elements $$K_{i,j}=\kappa(x_i,x_j)$$, is positive definite. The uniqueness implies the fundamental fact that a Hilbert space $$\mathcal{H}$$ is a RKHS *if and only if* it has a reproducing kernel. We will use this below.
-
-## Features
-
-Instead of starting from RKHSs, we can adopt another point of view and start from the definition of *kernel*. The function $$\kappa:\mathcal{X}\times\mathcal{X}\rightarrow \mathbb{R}$$ is a kernel if there exists a Hilbert space $$\mathcal{H}$$ and a **feature map**, $$\phi(x):\mathcal{X}\rightarrow\mathcal{H},$$ such that, $$\forall x,y\in\mathcal{X}:$$
-
-\begin{equation}
-\kappa(x,y)=\langle \phi(x),\phi(y) \rangle_{\mathcal{H}}.
-\end{equation}
-
-Such kernel is necessarily **positive definite**, thanks to the positive definiteness property of the <a target="_blank" href='https://en.wikipedia.org/wiki/Inner_product_space'> inner product</a> in $$\mathcal{H}$$. Furthermore, thanks to the<a target="_blank" href='https://en.wikipedia.org/wiki/Reproducing_kernel_Hilbert_space#Moore.E2.80.93Aronszajn_theorem'> Moore-Aronszajn</a> (M-A) theorem, every positive definite kernel is a reproducing kernel. To summarize:
-
-Given a RKHS, $$\mathcal{H}$$ $$\Rightarrow$$ it is possible to define the unique (Riesz Thm.) reproducing kernel with the inner product in $$\mathcal{H}$$
-
-$$\forall$$ positive definite kernel $$\Rightarrow$$ (M-A thm.) it is a reproducing kernel $$\Rightarrow$$ (remember the "if and only if" above) there is a unique RKHS with $$\kappa$$ being its reproducing kernel.
 
 ## Decisions. Optimal Separating Hyperplane
 
