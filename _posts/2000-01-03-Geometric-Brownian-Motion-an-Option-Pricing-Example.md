@@ -26,7 +26,7 @@ so that $$(W_{t_i} - W_{t_{i-1}}) \sim \mathcal{N}(0, t_i - t_{i-1})$$. Consider
 
 $$W_{t_i} - W_{t_{i-1}} = \sqrt{t_i-t_{i-1}}\;\epsilon_i = \sqrt{dt}\;\epsilon_i.$$ 
 
-that is, we calculate the increments of the Brownian motion as being $$\sqrt{dt}$$ times a standard normal variable, which is easy to generate in Python. We have assumed $$t_i - t_{i-1} = dt\; \forall i.$$ In practice what we're saying is that $$W_{t_1}  = \sqrt{t_1} Z_1, W_{t_2} = W_{t_1} + \sqrt{t_2 - t_1} Z_1, \ldots, W_{t_n} = \sqrt{dt}\sum\limits_i^n Z_i,$$, where $$Z_i$$ is a standard normal variable. In line *40* in the Python code below, we're calculating $$W_{t_n}$$ as we have just described.
+that is, we calculate the increments of the Brownian motion as being $$\sqrt{dt}$$ times a standard normal variable, which is easy to generate in Python. We have assumed $$t_i - t_{i-1} = dt\; \forall i.$$ In practice what we're saying is that $$W_{t_1}  = \sqrt{t_1} Z_1, W_{t_2} = W_{t_1} + \sqrt{t_2 - t_1} Z_1, \ldots, W_{t_n} = \sqrt{dt}\sum\limits_i^n Z_i,$$, where $$Z_i$$ is a standard normal variable. in the Python code below, we're calculating $$W_{t_n}$$ as we have just described, the relevant variable is called "W".
 
 In a Brownian Motion with Drift $$\mu$$ we have instead 
 \begin{equation}
@@ -116,7 +116,7 @@ The code is quite self-explanatory. First we load the data. We then define the r
 
 # Example: Option Pricing
 
-There are good introductions on the web about the Black-Scholes-Merton (BSM) model, as well as good books. I suggest for example the books <a target="_blank" href='https://www.amazon.com/Arbitrage-Theory-Continuous-Oxford-Finance/dp/019957474X'> Arbitrage Theory in Continuous Time </a> and <a target="_blank" href='https://www.degruyter.com/view/product/468290'> Stochastic Calculus for Fiannce II </a>. Here I propose an example that allows to understand at a glance what we're talking about
+There are good introductions on the web about the Black-Scholes-Merton (BSM) model, as well as good books. I suggest for example the books <a target="_blank" href='https://www.amazon.com/Arbitrage-Theory-Continuous-Oxford-Finance/dp/019957474X'> Arbitrage Theory in Continuous Time </a> and <a target="_blank" href='https://www.degruyter.com/view/product/468290'> Stochastic Calculus for Finance II </a>. Here I propose an example that allows to understand at a glance what we're talking about
 
 The <a target="_blank" href='https://en.wikipedia.org/wiki/Black%E2%80%93Scholes_model'>Black-Scholes-Merton model </a> is an *option pricing model*, that is, it gives the price of a contract as function of the price of the underlying. In this sense it is not an absolute measure of the price of the contract. It can be shown that in an <a target="_blank" href='https://en.wikipedia.org/wiki/Efficient-market_hypothesisarbitrage-free'> arbitrage-free market</a>, the price of the option has to follow the BSM equation.
 
