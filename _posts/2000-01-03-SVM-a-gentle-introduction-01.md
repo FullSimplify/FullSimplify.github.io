@@ -81,10 +81,13 @@ This is strange. We're using the same separating plane and observation but we ha
 \end{equation}
 
 Let's try it out:
-\begin{align}
-\widehat{\gamma}_{(1,1, 0)} & = 1\bigg( \dfrac{(1, 1, 0)}{\| (1, 1, 0)\|_2}\cdot (10, 10, 0) - \dfrac{6}{\| (1, 1, 0) \|_2}\bigg) = 1 \bigg(\bigg(\dfrac{1}{\sqrt{2}}, \dfrac{1}{\sqrt{2}}\bigg)\cdot(10, 10, 0) - \dfrac{6}{\sqrt{2}} \bigg)  = \dfrac{20}{\sqrt{2}}-\dfrac{6}{\sqrt{2}} = \dfrac{14}{\sqrt{2}}> 0,\\
-\widehat{\gamma}_{(2, 2, 0)} & = 1\bigg( \dfrac{(2, 2, 0)}{\|(2, 2, 0)\|_2}\cdot (10, 10, 0) - \dfrac{12}{\| (2, 2, 0)\|_2}\bigg) = 1 \bigg(\bigg(\dfrac{1}{\sqrt{2}}, \dfrac{1}{\sqrt{2}}\bigg)\cdot(10, 10, 0) - \dfrac{6}{\sqrt{2}} \bigg) = \dfrac{20}{\sqrt{2}}-\dfrac{6}{\sqrt{2}} = \dfrac{14}{\sqrt{2}}> 0.
-\end{align}
+
+\begin{equation}
+\widehat{\gamma}_{(1,1, 0)} = 1\bigg( \dfrac{(1, 1, 0)}{\| (1, 1, 0)\|_2}\cdot (10, 10, 0) - \dfrac{6}{\| (1, 1, 0) \|_2}\bigg) = 1 \bigg(\bigg(\dfrac{1}{\sqrt{2}}, \dfrac{1}{\sqrt{2}}\bigg)\cdot(10, 10, 0) - \dfrac{6}{\sqrt{2}} \bigg)  = \dfrac{20}{\sqrt{2}}-\dfrac{6}{\sqrt{2}} = \dfrac{14}{\sqrt{2}}> 0,
+\end{equation}
+\begin{equation}
+\widehat{\gamma}_{(2, 2, 0)}  = 1\bigg( \dfrac{(2, 2, 0)}{\|(2, 2, 0)\|_2}\cdot (10, 10, 0) - \dfrac{12}{\| (2, 2, 0)\|_2}\bigg) = 1 \bigg(\bigg(\dfrac{1}{\sqrt{2}}, \dfrac{1}{\sqrt{2}}\bigg)\cdot(10, 10, 0) - \dfrac{6}{\sqrt{2}} \bigg) = \dfrac{20}{\sqrt{2}}-\dfrac{6}{\sqrt{2}} = \dfrac{14}{\sqrt{2}}> 0.
+\end{equation}
 
 For a point far away from the dividing plane, say $$\mathbf{x}=(100, 100, 0)$$:
 
