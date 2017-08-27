@@ -1,6 +1,6 @@
 /* =Base */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Encode Sans', sans-serif;
     color: $iron;
     //background-color: $dorian;
 	background-color: #f1f1f1;
@@ -104,6 +104,7 @@ strong {
 
 .header {
     overflow: hidden;
+    font-family: Dancing Script;
 }
 
 .navigation {
@@ -111,7 +112,7 @@ strong {
 }
 
 .logo {
-    font-size: 50px;
+    //font-size: 50px;
     font-weight: 700;
     //color: $iron;
 	color: black;
@@ -130,6 +131,7 @@ strong {
 .menu__entry {
     display: inline-block;
     margin-right: 35px;
+    font-size: 30px;
     &:last-child {
         margin-right: 0px;
     }
