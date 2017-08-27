@@ -6,14 +6,17 @@
 			<li class="menu__entry"><a href="{{ '/' | prepend: site.baseurl }}">Blog</a></li>
             <li class="menu__entry"><a href="{{ '/about' | prepend: site.baseurl }}">About</a></li>
         </ul>
-    </div>
+    
 
-    <ul class="social-links">
-        {% if site.author.github %}
-            <a href="https://github.com/{{ site.author.github }}" class="social-links__entry" target="_blank">
-                <i class="fa fa-github"></i>
-            </a>
-        {% endif %}
+    	<ul class="social-links">
+        	{% if site.author.github %}
+            		<a href="https://github.com/{{ site.author.github }}" class="social-links__entry" target="_blank">
+                		<i class="fa fa-github"></i>
+            		</a>
+        	{% endif %}
+	</ul>
+    </div>
+	
 <!--
         {% if site.author.twitter %}
             <a href="https://twitter.com/{{ site.author.twitter }}" class="social-links__entry" target="_blank">
@@ -21,5 +24,5 @@
             </a>
         {% endif %}
 -->
-    </ul>
+    
 </header>
