@@ -13,10 +13,12 @@ a {
     text-decoration: none;
     
     &:hover {
-	text-decoration: underline;
+	//text-decoration: underline;
+	color: #6d6f71;
     }
     &:active{
-    text-decoration: underline;   
+    //text-decoration: underline;   
+	color: #6d6f71;
 	}
     .post-teaser-subtitle{
 	    font-weight: 300;
@@ -24,6 +26,7 @@ a {
 }
 a:active {
     //text-decoration: underline;
+	color: #6d6f71;
 }
 p {
     font-size: 20px;
