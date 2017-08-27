@@ -91,7 +91,11 @@ strong {
 
 /*Excerpt*/
 .post-teaser-subtitle{
-	font-size: 18px;	
+	font-size: 18px;
+	&:hover
+	{
+	    color: #6d6f71;
+	}
 }
 
 .post-divider {
