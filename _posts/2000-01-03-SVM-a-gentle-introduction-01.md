@@ -1,3 +1,14 @@
+---
+layout: post
+description: An introduction to the world of Support Vector Machines. We discuss how SVM's classify objects, and look at some examples.
+excerpt: An introduction to the world of Support Vector Machines. We discuss how SVM's classify objects, and look at some examples.
+title: "Support Vector Machines, a Gentle Introduction"
+subtitle: An introduction to the world of Support Vector Machines. We discuss how SVM's classify objects, and look at some examples.
+excerpt_separator: <!--more-->
+icon: fa fa-arrows-v
+date: 2015-01-22 12:09:42
+categories: 
+---
 
 # Support Vector Machines: a Gentle Introduction
 
@@ -9,7 +20,7 @@ Consider a set of points $$\{x\}_i$$ which are labeled (or classified) as **1** 
 
 This is a **Classification Problem**. The training set is made of points $$(\mathbf{x}_i,y_i)$$ where $$\mathbf{x}_i\in\mathbb{R}^n$$, and we want to learn the mapping $$\mathbf{x}_i\mapsto y_i$$.
 
-
+<!--
 ```python
 import matplotlib.pyplot as plt
 import numpy as np
@@ -37,7 +48,7 @@ ax.set_title('Figure 1', fontsize=20)
 
 plt.show()
 ```
-
+-->
 
 ![png](Untitled_files/Untitled_1_0.png)
 
