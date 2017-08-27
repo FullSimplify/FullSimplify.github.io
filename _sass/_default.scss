@@ -150,11 +150,17 @@ strong {
     &:active{
 	 text-decoration: underline;   
 	}
+    &:hover{
+	    color: #6d6f71;
+	}
 }
 
 .menu__entry a {
     font-weight: 400;
 	color: black;
+	    &:hover{
+	    color: #6d6f71;
+	}
 }
 
 .social-links {
