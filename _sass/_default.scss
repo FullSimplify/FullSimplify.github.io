@@ -135,6 +135,9 @@ strong {
     margin-top: 6px;
     padding: 0px;
     list-style-type: none;
+	&:hover{
+		color: #6d6f71;
+	}
 }
 
 .menu__entry {
