@@ -222,6 +222,10 @@ strong {
     font-size: 26px;
     //color: $iron;
 	color: black;
+    &:hover
+	{
+	    color: #6d6f71;
+	}
 }
 
 .post-teaser-subtitle{
