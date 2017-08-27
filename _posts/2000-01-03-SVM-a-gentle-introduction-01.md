@@ -98,6 +98,8 @@ For a point far away from the dividing plane, say $$\mathbf{x}=(100, 100, 0)$$:
 
 Now things are better. The geometric margin gives us the correct sign and a higher value the further away we are from the dividing plane. It tells us that we can are more confident in classifying $$\mathbf{x}=(100, 100, 0)$$ as "1" than $$\mathbf{x}=(10, 10, 0)$$.
 
+![png](/SVM01/Untitled_1_0_2.png?raw=true)
+
 Consider this. The quantity **r** in figure 2 is the orthogonal distance between the plane and a generic point, that is, the minimum distance between the plane and the point. If $$\mathbf{A} = \mathbf{x}^*$$ and $$\mathbf{B}$$ in figure 2 are the vectors from the origin to points **A** and **B** respectively, we can write
 
 \begin{equation}
