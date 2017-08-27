@@ -20,37 +20,8 @@ Consider a set of points $$\{x\}_i$$ which are labeled (or classified) as **1** 
 
 This is a **Classification Problem**. The training set is made of points $$(\mathbf{x}_i,y_i)$$ where $$\mathbf{x}_i\in\mathbb{R}^n$$, and we want to learn the mapping $$\mathbf{x}_i\mapsto y_i$$.
 
-<!--
-```python
-import matplotlib.pyplot as plt
-import numpy as np
 
-
-x = np.array([[1, 2], [1, 3], [3, 2], [4, 3], [6, 3], [4, 5]])
-point = (6,2)
-xline = np.arange(-1,8,1)
-yline = - xline + 6
-
-f, ax = plt.subplots(1,1, figsize=(12,8))
-ax.plot(x[0:3,0], x[0:3,1], '.', markersize=10, color='b')
-ax.plot(x[3:,0], x[3:,1], '.', markersize=10, color='g')
-ax.plot(point[0],point[1],'r.', markersize=10)
-ax.plot(xline, yline)
-ax.spines['left'].set_position('zero')
-ax.spines['right'].set_color('none')
-ax.spines['bottom'].set_position('zero')
-ax.spines['top'].set_color('none')
-ax.set_xticks(xline)
-ax.set_yticks(yline)
-ax.set_xlabel('$$x_1$$', fontsize=20)
-ax.set_ylabel('$$x_2$$', fontsize=20)
-ax.set_title('Figure 1', fontsize=20)
-
-plt.show()
-```
--->
-
-![png](Untitled_files/Untitled_1_0.png)
+![png](/SVM01/Untitled_1_0.png?raw=true)
 
 
 ##### Figure 1. The third axis $$x_3$$ is perpendicular with respect to $$x_1$$ and $$x_2$$, that is "coming out" of the screen/paper. The blue "line" is in fact a plane.
