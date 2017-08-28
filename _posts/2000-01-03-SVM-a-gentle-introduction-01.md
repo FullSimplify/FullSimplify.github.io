@@ -5,7 +5,7 @@ excerpt: An introduction to the world of Support Vector Machines. We discuss how
 title: "Support Vector Machines, a Gentle Introduction"
 subtitle: An introduction to the world of Support Vector Machines. We discuss how SVM's classify objects, and look at some examples.
 excerpt_separator: <!--more-->
-icon: fa fa-sort-numeric-desc
+icon: fa fa-cogs
 date: 2015-01-22 12:09:42
 categories: 
 ---
