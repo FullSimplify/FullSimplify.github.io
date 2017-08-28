@@ -145,7 +145,7 @@ We thus have a **constrained optimization** (minimization) problem which we conv
 This is a *convex optimization problem* that can be solved with <a target='_blank' href='https://en.wikipedia.org/wiki/Quadratic_programming'>quadratic programming</a> techniques by minimizing $$\mathcal{L}_p$$. It turns out that it's more convenient to solve the <a target='_blank' href='https://en.wikipedia.org/wiki/Duality_(optimization)'>dual problem</a>, which is a maximization problem:
 
 \begin{equation}
-\mathcal{L} = \sum\limits_i\alpha_i - \frac{1}{2}\sum\limits_{i,j}\alpha_i\,\alpha_j\,y_i\,y_j\,\mathbf{x}_i \cdot \mathbf{x}_j. \end{equation}
+\mathcal{L}_D = \sum\limits_i\alpha_i - \frac{1}{2}\sum\limits_{i,j}\alpha_i\,\alpha_j\,y_i\,y_j\,\mathbf{x}_i \cdot \mathbf{x}_j. \end{equation}
 
 with constraint $$\sum_i\alpha_i\,y_i =0$$, $$\alpha_i \geq 0, \forall i$$.
 
