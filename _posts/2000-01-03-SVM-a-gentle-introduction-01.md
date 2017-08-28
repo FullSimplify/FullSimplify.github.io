@@ -155,7 +155,7 @@ Why are the support vectors important? As we just mentioned we want to find the 
 
 ### Sequential Minimal Optimization
 
-Coming Soon! It's an efficient algorithm for solving the dual problem
+Coming Soon! It's an efficient algorithm for solving the dual problem.
 
 ## Non Linear Machines
 Collecting info in another post, take a look <a target='_blank' href='https://fullsimplify.github.io/2015/01/20/Support-Vector-Machines,-a-Gentle-Introduction.html'>here </a>.
