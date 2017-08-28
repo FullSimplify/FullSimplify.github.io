@@ -262,7 +262,9 @@ namespace ConsoleApplication1
             // Add a new point and make a new decision
             var new_test_point = new double[2]{1.3, 1.0};
             bool new_prediction = svm.Decide(new_test_point);
-
+            
+            var answers = prediction.ToZeroOne();
+            
             if (new_prediction==true)
             {
                 Console.Write("The predicted label of\b");
@@ -270,7 +272,7 @@ namespace ConsoleApplication1
                 Console.WriteLine("is {0}", new_prediction);
             }
 
-            ScatterplotBox.Show(test_set).Hold();           
+            ScatterplotBox.Show(test_set,answers);            
 
             Console.ReadLine();                 
             
@@ -280,3 +282,4 @@ namespace ConsoleApplication1
 }
 
 ```
+![png](/SVM01/scatter1.png?raw=true)
