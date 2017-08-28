@@ -137,15 +137,12 @@ The points on the black plane satisfy $$\mathbf{w}\cdot\mathbf{x} + d =1$$, so t
 Since we want to maximize the margin, *we want to minimize $$\|\mathbf{w}\|^2$$* assuming that the training points satisfy $$\, y_i(\mathbf{w}\cdot\mathbf{x}_i + d)-1\geq 0,\,\forall i$$ since the test points by definition lie further away from the black planes (figure 2) or on those planes (hence the equality), but not between them. Notice that the inequality constraint has to be satisfied by all test points, if we have $$n$$ test points, we have $$n$$ constraints.
 
 We thus have a **constrained optimization** (minimization) problem which we conveniently solve with the *Lagrangian Method*. We thus introduce *Lagrange Multipliers*, $$\alpha_i$$, one for each test point or inequality constraint, and formulate the **primal** optimization problem
-$$
-\begin{equation}
-\mathcal{L}_P_ = \frac{1}{2}\|\mathbf{w}\|^2 - \sum\limits_{i=1}^n \alpha_i\,y_i\,(\mathbf{w}\cdot\mathbf{x}_i + d) + \sum\limits_{i=1}^n\alpha_i.
-\end{equation}
-$$
+
+$$\mathcal{L}_P = \frac{1}{2}\|\mathbf{w}\|^2 - \sum\limits_{i=1}^n \alpha_i\,y_i\,(\mathbf{w}\cdot\mathbf{x}_i + d) + \sum\limits_{i=1}^n\alpha_i.$$
+
 This is a *convex optimization problem* that can be solved with <a target='_blank' href='https://en.wikipedia.org/wiki/Quadratic_programming'>quadratic programming</a> techniques by minimizing $$\mathcal{L}_p$$. It turns out that it's more convenient to solve the <a target='_blank' href='https://en.wikipedia.org/wiki/Duality_(optimization)'>dual problem</a>, which is a maximization problem:
 
-\begin{equation}
-\mathcal{L}_{D} = \sum\limits_i\alpha_i - \frac{1}{2}\sum\limits_{i,j}\alpha_i\,\alpha_j\,y_i\,y_j\,\mathbf{x}_i \cdot \mathbf{x}_j, \end{equation}
+$$\mathcal{L}_{D} = \sum\limits_i\alpha_i - \frac{1}{2}\sum\limits_{i,j}\alpha_i\,\alpha_j\,y_i\,y_j\,\mathbf{x}_i \cdot \mathbf{x}_j,$$
 
 with constraint $$\sum_i\alpha_i\,y_i =0$$, $$\alpha_i \geq 0, \forall i$$.
 
