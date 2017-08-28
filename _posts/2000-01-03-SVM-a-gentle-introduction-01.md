@@ -126,6 +126,37 @@ r = \mathbf{x}^*\cdot\dfrac{\mathbf{w}}{\|\mathbf{w}\|} + \dfrac{b}{\|\mathbf{w}
 
 We found an expression for the minimum distance between a point and the separating plane. It looks like the geometric factor except for the multiplying constant $$y$$. Considering that the labels are $$y\in\{-1, 1\}$$ and they do not add to such distance, we conclude that the geometric factor represents the minimum distance we were looking for.
 
-## Optimization
+## Optimization in the Linear Case
 
-Consider figure 2 where we have plotted the distances $$m_+$$ and $$m_-$$ as the distances between the closest points belonging to the two classes, to the separating plane. We define the *margin* as $$m_+ + m_-$$. We can define two corresponding planes. *In the linearly separable case we are looking for the separating plane with the highes margin*.
+Consider figure 2 where we have plotted the distances $$m_+$$ and $$m_-$$ as the distances between the closest points belonging to the two classes, to the separating plane. We define the *margin* as $$m_+ + m_-$$. We can define two corresponding planes. *In the linearly separable case we are looking for the separating plane with the largest margin*.
+
+Let us consider now the upper marginal plane, the top black plane in figure 2. The green point **A** belongs to that plane. We have that the orthogonal distance from the black plane and the separating blue plane is $$\,\frac{1}{\|\mathbf{w}\|}\,y^*$$. The points on the black plane satisfy $$\mathbf{w}\cdot \mathbf{x} + d = 1$$, so the orthogonal distance between the points on the black plane and the separating plane is $$\,\bigg| \frac{1}{\|\mathbf{w}\|}\,y^*\bigg| = \frac{1}{\|\mathbf{w}\|}$$. The margin is twice that, that is, margin $$= \frac{2}{\|\mathbf{w}\|}$$.
+
+Since we want to maximize the margin, *we want to minimize $$\|\mathbf{w}\|^2$$* assuming that the training points satisfy $$\, y_i(\mathbf{w}\cdot\mathbf{x}_i + d)-1\geq 0,\,\forall i$$ since the test points by definition lie further away from the black planes (figure 2) or on those planes (hence the equality), but not between them. Notice that the inequality constraint has to be satisfied by all test points, if we have $$n$$ test points, we have $$n$$ constraints.
+
+We thus have a **constrained optimization** (minimization) problem which we conveniently solve with the *Lagrangian Method*. We thus introduce *Lagrange Multipliers*, $$\alpha_i$$, one for each test point or inequality constraint, and formulate the **primal** optimization problem
+
+\begin{equation}
+\mathcal{L}_p = \frac{1}{2}\|\mathbf{w}\|^2 - \sum\limits_{i=1}^n \alpha_i\,y_i\,(\mathbf{w}\cdot\mathbf{x}_i + d) + \sum\limits_{i=1}^n\alpha_i.
+\end{equation}
+
+This is a *convex optimization problem* that can be solved with <a target='_blank' href='https://en.wikipedia.org/wiki/Quadratic_programming'>quadratic programming</a> techniques by *minimizing* $$\mathcal{L}_p$$. It turns out that it's more conveniente to solve the <a target='_blank' href='https://en.wikipedia.org/wiki/Duality_(optimization)'>dual problem</a>, which is a maximization problem:
+
+\begin{equation}
+\mathcal{L}_D = \sum\limits_i\alpha_i - \frac{1}{2}\sum\limits_{i,j}\alpha_i\,\alpha_j\,y_i\,y_j\,\mathbf{x}_i\cdot\mathbf{x}_j.
+\end{equation}
+
+with constraint $$\sum_i\alpha_i\,y_i =0$$, $$\alpha_i \geq 0, \forall i$$.
+
+The maximization of $$\mathcal{L}_D$$ with respect to the multipliers $$\alpha_i$$ gives us a lower bound for the primal problem. There is one multiplier $$\alpha_i$$ for every training point, but some of the training points are special. The training points on the black planes (figure 2) are called **support vectors**. For the support vectors, $$\alpha_i > 0$$. Other points that lie on the black planes and the points far away from the planes, are just points, and they have their $$\alpha_i = 0$$.
+
+Why are the support vectors important? As we just mentioned we want to find the separating plane with the largest margin. The margin **is** defined by how close the support vector are to the separating plane. If we have support vectors close to the plane, the margin is small. Moreover, if we eliminate all the non support vector points and train the linear vector machine again, we obtain the same result.
+
+### Sequential Minimal Optimization
+
+Coming Soon! It's an effi
+
+## Non Linear Machines
+Collecting info in another post, take a look <a target='_blank' href='https://fullsimplify.github.io/2015/01/20/Support-Vector-Machines,-a-Gentle-Introduction.html'>here </a>.
+
+## Applications
