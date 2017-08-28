@@ -139,13 +139,13 @@ Since we want to maximize the margin, *we want to minimize $$\|\mathbf{w}\|^2$$*
 We thus have a **constrained optimization** (minimization) problem which we conveniently solve with the *Lagrangian Method*. We thus introduce *Lagrange Multipliers*, $$\alpha_i$$, one for each test point or inequality constraint, and formulate the **primal** optimization problem
 
 \begin{equation}
-\mathcal{L}_P = \frac{1}{2}\|\mathbf{w}\|^2 - \sum\limits_{i=1}^n \alpha_i\,y_i\,(\mathbf{w}\cdot\mathbf{x}_i + d) + \sum\limits_{i=1}^n\alpha_i.
+\mathcal{L}_{P} = \frac{1}{2}\|\mathbf{w}\|^2 - \sum\limits_{i=1}^n \alpha_i\,y_i\,(\mathbf{w}\cdot\mathbf{x}_i + d) + \sum\limits_{i=1}^n\alpha_i.
 \end{equation}
 
 This is a *convex optimization problem* that can be solved with <a target='_blank' href='https://en.wikipedia.org/wiki/Quadratic_programming'>quadratic programming</a> techniques by minimizing $$\mathcal{L}_p$$. It turns out that it's more convenient to solve the <a target='_blank' href='https://en.wikipedia.org/wiki/Duality_(optimization)'>dual problem</a>, which is a maximization problem:
 
 \begin{equation}
-\mathcal{L}_D = \sum\limits_i\alpha_i - \frac{1}{2}\sum\limits_{i,j}\alpha_i\,\alpha_j\,y_i\,y_j\,\mathbf{x}_i \cdot \mathbf{x}_j. \end{equation}
+\mathcal{L}_{D} = \sum\limits_i\alpha_i - \frac{1}{2}\sum\limits_{i,j}\alpha_i\,\alpha_j\,y_i\,y_j\,\mathbf{x}_i \cdot \mathbf{x}_j. \end{equation}
 
 with constraint $$\sum_i\alpha_i\,y_i =0$$, $$\alpha_i \geq 0, \forall i$$.
 
