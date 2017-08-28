@@ -158,3 +158,122 @@ Coming Soon! It's an efficient algorithm for solving quadratic programming probl
 Collecting info in another post, take a look <a target='_blank' href='https://fullsimplify.github.io/2015/01/20/Support-Vector-Machines,-a-Gentle-Introduction.html'>here </a>.
 
 ## Applications
+The code is quite self explanatory with what we have said so far. We generate a set that is quite easy to classify. Better Plots soon.
+
+```cs
+using Accord.Controls;
+using Accord.MachineLearning.VectorMachines.Learning;
+using Accord.Math.Optimization.Losses;
+using Accord.Statistics;
+using Accord.Statistics.Kernels;
+using Accord.Math;
+using Accord;
+using System;
+using System.Linq;
+using System.Windows.Forms;
+using System.Collections.Generic;
+
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        public static void PrintJaggedMatrix<T>(T[][] matrix, string message = null)
+        {
+            Console.WriteLine(message);
+            int i = 0;
+            foreach (T[] col in matrix)
+            {
+                Console.WriteLine("Row {0}", i);
+                i += 1;
+                foreach (T row in col)
+                {
+                    Console.WriteLine("{0:N5}", row);
+                }
+                Console.WriteLine("\n");
+            }
+        }
+
+        public static void PrintArray<T>(T[] array, string message = null)
+        {
+            Console.WriteLine(message);
+            int i = 0;    
+            foreach (T item in array)
+            {
+                Console.WriteLine("{0:N5}", item);
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            // Test set. Generate a Nx2 random array
+            // To make it easy generate 2 sets far apart.
+            // Easy Linear SVM classification Example
+
+            // first set of points
+            var x1 = Accord.Math.Jagged.Random(10, 1, 0.0, 1.1);
+            var y1 = Accord.Math.Jagged.Random(10, 1, 0.0, 1.0);
+            var set1 = Accord.Math.Matrix.Concatenate(x1, y1);
+            set1 = set1.Transpose();
+            //PrintJaggedMatrix(set1.Transpose(), "set1:\n");// Print the first set
+
+            // second set of points
+            var x2 = Accord.Math.Jagged.Random(10, 1, 1.1, 2.0);
+            var y2 = Accord.Math.Jagged.Random(10, 1, 0.5, 1.5);
+            var set2 = Accord.Math.Matrix.Concatenate(x2, y2);
+            set2 = set2.Transpose();
+            //PrintJaggedMatrix(set2.Transpose(),"set2:\n"); // Print the first set
+
+            // Test Set
+            var test_set = Accord.Math.Matrix.Concatenate(set1, set2).Transpose();
+
+            // Print the Test Set
+            //PrintJaggedMatrix(test_set, "Training Set:\n");
+
+            // Plot the Test Set    
+            // ScatterplotBox.Show(test_set);
+            
+            // Labels for the test set
+            // Half of the test set is indexed -1 and half +1
+            var labels1 = new int[10];
+            var labels2 = new int[10];
+            labels1.Set(-1, labels1.GetIndices());
+            labels2.Set(1, labels2.GetIndices());
+            var labels = Enumerable.ToArray(labels1.Concat(labels2));
+            
+
+            // Use the SMO algorithm to solve the quadratic optimization
+            // Gaussian kernel for example
+            var minimizer = new SequentialMinimalOptimization<Gaussian>()
+            {
+                UseComplexityHeuristic = true,
+                UseKernelEstimation = true
+            };
+
+            // define the SVM with the minimizer
+            var svm = minimizer.Learn(test_set, labels);
+
+            // Decisions predicted by the machine
+            bool[] prediction = svm.Decide(test_set);         
+            
+            // Add a new point and make a new decision
+            var new_test_point = new double[2]{1.3, 1.0};
+            bool new_prediction = svm.Decide(new_test_point);
+
+            if (new_prediction==true)
+            {
+                Console.Write("The predicted label of\b");
+                PrintArray(new_test_point);
+                Console.WriteLine("is {0}", new_prediction);
+            }
+
+            ScatterplotBox.Show(test_set).Hold();           
+
+            Console.ReadLine();                 
+            
+        }
+
+    }
+}
+
+```
