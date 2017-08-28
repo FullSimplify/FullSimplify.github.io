@@ -157,7 +157,7 @@ Coming Soon! It's an efficient algorithm for solving quadratic programming probl
 ## Non Linear Machines
 Collecting info in another post, take a look <a target='_blank' href='https://fullsimplify.github.io/2015/01/20/Support-Vector-Machines,-a-Gentle-Introduction.html'>here </a>.
 
-## Applications
+## Applications C#
 The code is quite self explanatory with what we have said so far. We generate a set that is quite easy to classify. Plots soon.
 
 If we print the variable **new_prediction** that gives us the predicted label of **new_test_point** we get **+1** (or True) as it should.
