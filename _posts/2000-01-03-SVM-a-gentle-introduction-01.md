@@ -157,7 +157,7 @@ Coming Soon! It's an efficient algorithm for solving quadratic programming probl
 ## Non Linear Machines
 Collecting info in another post, take a look <a target='_blank' href='https://fullsimplify.github.io/2015/01/20/Support-Vector-Machines,-a-Gentle-Introduction.html'>here </a>.
 
-## Applications. C# Accord Framework.
+## Applications. C\# Accord Framework.
 
 The code is quite self explanatory with what we have said so far. We generate a set that is quite easy to classify. Plots soon.
 
