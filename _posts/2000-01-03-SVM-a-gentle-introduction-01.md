@@ -7,7 +7,7 @@ subtitle: An introduction to the world of Support Vector Machines. We discuss ho
 excerpt_separator: <!--more-->
 icon: fa fa-cogs
 date: 2015-01-22 12:09:42
-permalink: fullsimplify.github.io/Support-Vector-Machines-a-gentle-introduction.html
+permalink: Support-Vector-Machines-a-gentle-introduction.html
 categories: 
 ---
 
