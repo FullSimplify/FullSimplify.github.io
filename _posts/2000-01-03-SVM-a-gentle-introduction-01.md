@@ -1,7 +1,7 @@
 ---
 layout: post
 description: An introduction to the world of Support Vector Machines. We discuss how SVM's classify objects, and look at some examples.
-excerpt: An introduction to the world of Support Vector Machines. We discuss how SVM's classify objects. Includes A C# Accord-Framework example. Consider a set of points $\{x\}_i_$
+excerpt: An introduction to the world of Support Vector Machines. We discuss how SVM's classify objects. Includes A C# Accord-Framework example. Consider a set of points which constitute our observations or test set. These points are labeled as either **1** or **-1**. If we had a new observation, 1) how would we classify it? Should we choose $$y_k = -1$$ or $$y_k=1$$? 2) How to quantify the confidence we have that the point belongs to that class? This is a **Classification Problem**. The problem consist in **learning** the mapping $$\mathbf{x}_i\mapsto y_i$$...
 title: "Support Vector Machines, a Gentle Introduction"
 subtitle: An introduction to the world of Support Vector Machines. We discuss how SVM's classify objects, and look at some examples.
 excerpt_separator: <!--more-->
@@ -14,7 +14,7 @@ categories:
 
 ## Classification in the Linear Case
 
-Consider a set of points $$\{x\}_i_$$ which are labeled (or classified) as **1** or **-1**, see figure 1. The blue points are classified as **-1** and the green points as **1**. We can write that the class/label of the generic point $$x_i$$ is $$y_i\in\{-1,1\}$$. If we had a new observation point $$x_k$$ (in red in figure 1), 
+Consider a set of points $$\{x\}_i_$$ which constitute our observations or test set. These points labeled (or classified) as **1** or **-1**, see figure 1. The blue points are classified as **-1** and the green points as **1**. Formally we write that the class/label of the generic point $$x_i$$ is $$y_i\in\{-1,1\}$$. If we had a new observation point $$x_k$$ (in red in figure 1), 
 1. how would we classify it? Should we choose $$y_k = -1$$ or $$y_k=1$$?
 2. How to quantify the confidence we have that the point belongs to that class?
 
