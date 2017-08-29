@@ -8,8 +8,9 @@ sitemap:
 
 <ul class="list-posts">
     {% for post in site.posts %}
- <div class="post-box">
+ 
   <a href="{{ post.url | prepend: site.baseurl }}"><i id='side-icon' class="{{post.icon}}" aria-hidden="true"></i></a>
+  <div class="one">
         <li class="post-teaser">          
             <a href="{{ post.url | prepend: site.baseurl }}">
                 <span class="post-teaser__title" style="font-size:26px;">{{ post.title }}</span>                
