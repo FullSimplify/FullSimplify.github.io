@@ -5,7 +5,10 @@ body {
     //background-color: $dorian;
 	background-color: #fcfcfc;
 }
-
+.border
+{
+    z-index:-1;
+}
 a {
     //color: #45565c;
 	color: black;
