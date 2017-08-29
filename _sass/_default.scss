@@ -123,10 +123,16 @@ strong {
 .wrapper {
 	margin-left:20%;
     max-width: 60%;
+   border-style:solid;
     //margin: 100px auto;
 	color: #2a2a2a;
 }
-
+.border
+{
+    z-index:-1;
+    border-style: solid;
+    border-width: 22px;
+}
 .header {
     //overflow: hidden;
     font-family: 'Dancing Script';
