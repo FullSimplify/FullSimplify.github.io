@@ -1,7 +1,7 @@
 ---
 layout: post
 description: An introduction to the world of Support Vector Machines. We discuss how SVM's classify objects, and look at some examples.
-excerpt: An introduction to the world of Support Vector Machines. We discuss how SVM's classify objects. Includes A C# Accord-Framework example. Consider a set of points $$\{x\}_i_$$ which are labeled (or classified) as **1** or **-1**
+excerpt: An introduction to the world of Support Vector Machines. We discuss how SVM's classify objects. Includes A C# Accord-Framework example. Consider a set of points $$\{x\}_i_$$ which are labeled (or classified) as **1** or **-1** \\(inline x\\)
 title: "Support Vector Machines, a Gentle Introduction"
 subtitle: An introduction to the world of Support Vector Machines. We discuss how SVM's classify objects, and look at some examples.
 excerpt_separator: <!--more-->
