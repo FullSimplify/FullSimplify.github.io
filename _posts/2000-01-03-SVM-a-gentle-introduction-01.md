@@ -1,7 +1,7 @@
 ---
 layout: post
 description: An introduction to the world of Support Vector Machines. We discuss how SVM's classify objects, and look at some examples.
-excerpt: An introduction to the world of Support Vector Machines. We discuss how SVM's classify objects, and look at some examples.
+excerpt: An introduction to the world of Support Vector Machines. We discuss how SVM's classify objects, and look at some examples. A C\# Accord-Framework example.
 title: "Support Vector Machines, a Gentle Introduction"
 subtitle: An introduction to the world of Support Vector Machines. We discuss how SVM's classify objects, and look at some examples.
 excerpt_separator: <!--more-->
