@@ -1,7 +1,7 @@
 ---
 layout: post
 description: Simulating the Geometric Brownian Motion. We discuss Random Walk, Wiener Processes and the Black-Scholes-Merton model.
-excerpt: Simulating the Geometric Brownian Motion. We discuss Random Walk, Wiener Processes and the Black-Scholes-Merton model.>Geometric Brownian Motion (GBM) is an ubiquitous random process, used not only in science, but also in finance, for example in the <a target="_blank" href='https://en.wikipedia.org/wiki/Black%E2%80%93Scholes_model'>Black-Scholes model</a>. The main ingredient of  such mathematical object is the <a target="_blank" href='https://en.wikipedia.org/wiki/Brownian_motion'>Brownian Motion</a>, a continuous-time random process that can be thought of as the limit of a <a target="_blank" href='https://en.wikipedia.org/wiki/Random_Walk'>Random Walk</a>...
+excerpt: Simulating the Geometric Brownian Motion. We discuss Random Walk, Wiener Processes and the Black-Scholes-Merton model. Geometric Brownian Motion (GBM) is an ubiquitous random process, used not only in science, but also in finance, for example in the <a target="_blank" href='https://en.wikipedia.org/wiki/Black%E2%80%93Scholes_model'>Black-Scholes model</a>. The main ingredient of  such mathematical object is the <a target="_blank" href='https://en.wikipedia.org/wiki/Brownian_motion'>Brownian Motion</a>, a continuous-time random process that can be thought of as the limit of a <a target="_blank" href='https://en.wikipedia.org/wiki/Random_Walk'>Random Walk</a>...
 title: "Simulating the Geometric Brownian Motion and an Option Pricing Example"
 subtitle: Simulating the Geometric Brownian Motion. We discuss Random Walk, Wiener Processes and the Black-Scholes-Merton model.
 excerpt_separator: <!--more-->
