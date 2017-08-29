@@ -1,7 +1,7 @@
 ---
 layout: post
 description: Support Vector Machines and some of its mathematical aspects. We discuss Classification, Reproducing Kernel Hilbert Spaces and more.
-excerpt: Support Vector Machines and some of its mathematical aspects. We discuss Classification, Reproducing Kernel Hilbert Spaces and more.
+excerpt: Support Vector Machines and some of its mathematical aspects. We discuss Classification, Reproducing Kernel Hilbert Spaces and more. In a classification problem we want to classify or label a new observation, having trained our model with a set of observations whose class is known. One approach is to think that all elements that belong to the same class are *similar* in some way. We thus need a concept of similarity or distance...
 title: "Support Vector Machines, Kernels and Hilbert Spaces"
 subtitle: Support Vector Machines and some of its mathematical aspects. We discuss Classification, Reproducing Kernel Hilbert Spaces and more.
 excerpt_separator: <!--more-->
@@ -10,7 +10,7 @@ date: 2015-01-20 12:09:42
 categories: 
 ---
 
-In a classification problem we want to classify or label a new observation, having trained our model with a set of observations whose class is known.<!--more--> One approach is to think that all elements that belong to the same class are *similar* in some way. We thus need a concept of similarity or *distance*.
+In a classification problem we want to classify or label a new observation, having trained our model with a set of observations whose class is known. One approach is to think that all elements that belong to the same class are *similar* in some way. We thus need a concept of similarity or *distance*.
 
 For example, if we had to classify cars, we could choose some fundamental *features*, such as weight, engine power and mileage. Having a list of cars with such information divided in two parts, *good* cars and *bad* cars, can we classify the next car we come across as being part of the group of *good* cars or *bad* cars?
 
