@@ -1,7 +1,7 @@
 ---
 layout: post
 description: Support Vector Machines and some of its mathematical aspects. We discuss Classification, Reproducing Kernel Hilbert Spaces and more.
-excerpt: Support Vector Machines and some of its mathematical aspects. We discuss Classification, Reproducing Kernel Hilbert Spaces and more. <\br>In a classification problem we want to classify or label a new observation, having trained our model with a set of observations whose class is known. One approach is to think that all elements that belong to the same class are *similar* in some way. We thus need a concept of similarity or distance...
+excerpt: Support Vector Machines and some of its mathematical aspects. We discuss Classification, Reproducing Kernel Hilbert Spaces and more. <br>In a classification problem we want to classify or label a new observation, having trained our model with a set of observations whose class is known. One approach is to think that all elements that belong to the same class are *similar* in some way. We thus need a concept of similarity or distance...
 title: "Support Vector Machines, Kernels and Hilbert Spaces"
 subtitle: Support Vector Machines and some of its mathematical aspects. We discuss Classification, Reproducing Kernel Hilbert Spaces and more.
 excerpt_separator: <!--more-->
