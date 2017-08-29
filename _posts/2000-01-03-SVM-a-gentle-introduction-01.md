@@ -1,7 +1,7 @@
 ---
 layout: post
 description: An introduction to the world of Support Vector Machines. We discuss how SVM's classify objects, and look at some examples.
-excerpt: An introduction to the world of Support Vector Machines. We discuss how SVM's classify objects. Includes A C# Accord-Framework example. Consider a set of points $$\{x\}_i_$$ which are labeled (or classified) as **1** or **-1**, see figure 1. If we had a new observation point $$x_k$$,how would we classify it? Should we choose $$y_k = -1$$ or $$y_k=1$$? How to quantify the confidence we have that the point belongs to that class? This is a **Classification Problem**...
+excerpt: An introduction to the world of Support Vector Machines. We discuss how SVM's classify objects. Includes A C# Accord-Framework example. Consider a set of points ${x}_i_$ which are labeled (or classified) as __1__ or __-1__, see figure 1. If we had a new observation point $$x_k$$,how would we classify it? Should we choose $y_k = -1$ or $y_k=1$? How to quantify the confidence we have that the point belongs to that class? This is a __Classification Problem__...
 title: "Support Vector Machines, a Gentle Introduction"
 subtitle: An introduction to the world of Support Vector Machines. We discuss how SVM's classify objects, and look at some examples.
 excerpt_separator: <!--more-->
