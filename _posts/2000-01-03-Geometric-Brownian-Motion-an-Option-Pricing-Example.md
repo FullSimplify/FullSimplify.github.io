@@ -8,6 +8,7 @@ excerpt_separator: <!--more-->
 icon: fa fa-area-chart
 date: 2015-02-20 12:09:42
 categories: 
+permalink: Geometric-Brownian-Motion.html
 ---
 # Geometric Brownian Motion: an Option Pricing Example.
 
