@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-scss: _sass/_default.scss
+scss: _sass/_main.scss
 subtitle: Just who am I?
 permalink: /about/
 ---
