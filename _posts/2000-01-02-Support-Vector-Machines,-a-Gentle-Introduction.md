@@ -8,6 +8,7 @@ excerpt_separator: <!--more-->
 icon: fa fa-cogs
 date: 2015-01-20 12:09:42
 categories: 
+permalink: Support-Vector-Machines-Kernels-and-Hilbert-Spaces.html
 ---
 
 In a classification problem we want to classify or label a new observation, having trained our model with a set of observations whose class is known. One approach is to think that all elements that belong to the same class are *similar* in some way. We thus need a concept of similarity or *distance*.
