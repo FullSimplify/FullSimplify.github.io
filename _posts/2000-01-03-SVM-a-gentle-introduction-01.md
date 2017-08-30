@@ -160,7 +160,7 @@ Collecting info in another post, take a look <a target='_blank' href='https://fu
 
 ## Applications. C\# Accord Framework.
 
-The code is quite self explanatory with what we have said so far. We generate a set that is quite easy to classify.
+The code is quite self explanatory with what we have said so far. We generate a set that is quite easy to classify. In the varialbe *new_test_set* we have added a new point (in red in the top right figure). We then make a new prediction and, since the point is on the top right, is correcly predicted as being part of the "red" class, **+1**.
 
 If we print the variable **new_prediction** that gives us the predicted label of **new_test_point** we get **+1** (or True) as it should.
 
