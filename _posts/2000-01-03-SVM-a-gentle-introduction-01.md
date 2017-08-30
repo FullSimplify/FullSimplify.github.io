@@ -68,10 +68,12 @@ That is correct again. The functional margin is negative for incorrectly classif
 
 Consider now the case where $$\mathbf{w}_{new} = (2, 2, 0),\;d_{new} = 12$$. This is exactly twice as much as before. Geometrically speaking such $$\mathbf{w}$$ and $$d$$ represent the **same** plane (line), so we should get the same classification results. But we don't! In fact, if we were to calculate the functional margin for $$\mathbf{x}=(10, 10, 0), \; y=1$$ with the original plane and with $$\mathbf{w}_{new}$$ and $$d_{new}$$ we would get
 
-\begin{align}
-\gamma_{(1, 1, 0)} & = 1\big( (1, 1, 0)\cdot (10, 10, 0) - 6\big) = 14 > 0,\\
-\gamma_{(2, 2, 0)} & = 1\big( (2, 2, 0)\cdot (10, 10, 0) - 12\big) = 28 > 0.
-\end{align}
+\begin{equation}
+\gamma_{(1, 1, 0)}  = 1\big( (1, 1, 0)\cdot (10, 10, 0) - 6\big) = 14 > 0,
+\end{equation}
+\begin{equation}
+\gamma_{(2, 2, 0)}  = 1\big( (2, 2, 0)\cdot (10, 10, 0) - 12\big) = 28 > 0.
+\end{equation}
 
 This is strange. We're using the same separating plane and observation but we have $$\gamma_{(2, 2, 0)} > \gamma_{(1, 1, 0)}$$. There is clearly a problem with multiplying $$\mathcal{w}$$ and $$d$$ by a factor. To solve the problem we introduce the **geometric margin**, $$\widehat{\gamma}$$, normalizing $$\mathcal{w}$$ and $$d$$ by $$\| \mathbf{w}\|_2$$
 
