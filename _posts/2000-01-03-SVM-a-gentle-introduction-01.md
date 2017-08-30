@@ -188,11 +188,11 @@ namespace ConsoleApplication1
             int i = 0;
             foreach (T[] col in matrix)
             {
-                Console.WriteLine("Row {0}", i);
+                Console.WriteLine("Row {0}", i+1);
                 i += 1;
                 foreach (T row in col)
                 {
-                    Console.WriteLine("{0:N5}", row);
+                    Console.Write("{0:N5}\t", row);
                 }
                 Console.WriteLine("\n");
             }
@@ -214,16 +214,18 @@ namespace ConsoleApplication1
             // To make it easy generate 2 sets far apart.
             // Easy Linear SVM classification Example
 
+            // number of points in the dataset
+            int n_points = 10;
             // first set of points
-            var x1 = Accord.Math.Jagged.Random(10, 1, 0.0, 1.1);
-            var y1 = Accord.Math.Jagged.Random(10, 1, 0.0, 1.0);
+            var x1 = Accord.Math.Jagged.Random(n_points, 1, 0.0, 1.1);
+            var y1 = Accord.Math.Jagged.Random(n_points, 1, 0.0, 1.0);
             var set1 = Accord.Math.Matrix.Concatenate(x1, y1);
             set1 = set1.Transpose();
             //PrintJaggedMatrix(set1.Transpose(), "set1:\n");// Print the first set
 
             // second set of points
-            var x2 = Accord.Math.Jagged.Random(10, 1, 1.1, 2.0);
-            var y2 = Accord.Math.Jagged.Random(10, 1, 0.5, 1.5);
+            var x2 = Accord.Math.Jagged.Random(n_points, 1, 1.1, 2.0);
+            var y2 = Accord.Math.Jagged.Random(n_points, 1, 0.5, 1.5);
             var set2 = Accord.Math.Matrix.Concatenate(x2, y2);
             set2 = set2.Transpose();
             //PrintJaggedMatrix(set2.Transpose(),"set2:\n"); // Print the first set
@@ -235,7 +237,7 @@ namespace ConsoleApplication1
             //PrintJaggedMatrix(test_set, "Training Set:\n");
 
             // Plot the Test Set    
-            // ScatterplotBox.Show(test_set);
+            ScatterplotBox.Show("Test Set", test_set);
             
             // Labels for the test set
             // Half of the test set is indexed -1 and half +1
@@ -248,39 +250,51 @@ namespace ConsoleApplication1
 
             // Use the SMO algorithm to solve the quadratic optimization
             // Gaussian kernel for example
-            var minimizer = new SequentialMinimalOptimization<Gaussian>()
+            var kernel = new Gaussian();
+            // Create a pre-computed Gaussian kernel matrix
+            var precomputed = new Precomputed(kernel.ToJagged(test_set));
+
+            var minimizer = new SequentialMinimalOptimization<Precomputed, int>()
             {
                 UseComplexityHeuristic = true,
-                UseKernelEstimation = true
+                Kernel = precomputed
             };
 
-            // define the SVM with the minimizer
-            var svm = minimizer.Learn(test_set, labels);
-
+            // define the SVM with the minimizer           
+            var svm = minimizer.Learn(precomputed.Indices, labels);
             // Decisions predicted by the machine
-            bool[] prediction = svm.Decide(test_set);         
-            
-            // Add a new point and make a new decision
-            var new_test_point = new double[2]{1.3, 1.0};
-            bool new_prediction = svm.Decide(new_test_point);
-            
-            var answers = prediction.ToZeroOne();
-            
-            if (new_prediction==true)
-            {
-                Console.Write("The predicted label of\b");
-                PrintArray(new_test_point);
-                Console.WriteLine("is {0}", new_prediction);
-            }
+            bool[] prediction = svm.Decide(precomputed.Indices);
+            var answer = prediction.ToMinusOnePlusOne();
+            ScatterplotBox.Show("Decision", test_set, answer);           
+          
 
-            ScatterplotBox.Show(test_set,answers);            
+            // Add a new point (1.3, 1) to the test set and make a new decision
+            double[][] new_test_point = { new double[] {1.3, 1.0}};
+            // The new point is at the end of "test_set"
+            var new_test_set = test_set.Transpose().Concatenate(new_test_point.Transpose()).Transpose();
 
-            Console.ReadLine();                 
+            // Plot new Test Set
+            var vec = Accord.Math.Vector.Zeros<int>(n_points*2+1); // vec is only there to color red new_test_point
+            // Just for plotting
+            vec[vec.Length - 1] = 1;
+            ScatterplotBox.Show("New Test Set", new_test_set, vec);
             
+            
+            precomputed = new Precomputed(kernel.ToJagged2(test_set, new_test_point));
+            svm.Kernel = precomputed;
+
+            bool[] new_prediction = svm.Decide(precomputed.Indices);
+            var new_answer = new_prediction.ToMinusOnePlusOne();
+
+            // add new_answer to the known answers
+            new_answer = answer.Concatenate(vec[vec.Length - 1]);      
+
+            ScatterplotBox.Show("New Decision", new_test_set, new_answer);           
+
+            //Console.ReadLine();          
         }
 
     }
 }
-
 ```
-![png](/SVM01/scatter1.png?raw=true)
+![png](/SVM01/scatter2.png?raw=true)
