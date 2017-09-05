@@ -130,7 +130,6 @@ plt.show()
 ![png](/SVM_files/Figure_1.png?raw=true)
 
 
-
 ![png](/SVM_files/Figure_2.png?raw=true)
 
 ## Decisions. Optimal Separating Hyperplane
