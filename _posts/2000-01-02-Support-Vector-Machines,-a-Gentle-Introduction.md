@@ -106,7 +106,12 @@ def kernel_matrix(x1, x2, L, s):
     triu = np.triu_indices(sample_size)
     K[triu] = K.T[triu]
     return K
-
+ 
+# Alternative with list comprehension
+# def kernel_matrix(x1, x2, L, s):
+#    return [[kernel_fun(v, w, L, s) for v in x1] for w in x2]
+    
+    
 K2 = kernel_matrix(np.asarray(x_test), np.asarray(x_test), 2, .05)
 K6 = kernel_matrix(np.asarray(x_test), np.asarray(x_test), 5, .05)
 
