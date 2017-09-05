@@ -84,55 +84,45 @@ Let's make an example where we draw samples from a gaussian process with the squ
 
 ```python
 import numpy as np
-import scipy.stats as stats
 import matplotlib.pyplot as plt
-
 
 sample_size = 200
 x_test = np.linspace(-50, 50, sample_size)
 
 
-def _kernel_fun(x, y, s):
+def kernel_fun(x, y, L, s):
     """ Computes the kernel function for two points x and y. """
-    return np.exp(-(1.0 / (2 * s ** 2)) * abs(x - y) ** 2)
+    return (s ** 2) * np.exp(-(1.0 / (2 * L ** 2)) * abs(x - y) ** 2)
 
 
-def kernel_matrix(x1, x2, s):
+def kernel_matrix(x1, x2, L, s):
     """ Computes the kernel matrix. It's symmetric. """
-    h = 0
-    K = np.empty((sample_size, sample_size))
-    for j in xrange(sample_size):  # fill the j-th column
-        for i in xrange(0, sample_size):
-            K[i][j] = _kernel_fun(x1[i], x2[j], s)
+    h = 1
+    K = np.zeros((sample_size, sample_size))
+    for i in xrange(0, sample_size):
+        for j in xrange(0, h):  # fill the j-th column
+            K[i][j] = kernel_fun(x1[i], x2[j], L, s)
         h = h + 1
-    triu = np.triu_indices(4)
+    triu = np.triu_indices(sample_size)
     K[triu] = K.T[triu]
     return K
 
-
-K5 = kernel_matrix(np.asarray(x_test), np.asarray(x_test), 5)  # high sigma (=5), smoother functions
-K2 = kernel_matrix(np.asarray(x_test), np.asarray(x_test), 2)  # low sigma (=2), not so smooth
+K = kernel_matrix(np.asarray(x_test), np.asarray(x_test), 6, .05)
 
 # Sample from the multivariate normal process with mean zero and cov=K
-gauss_samples5 = np.random.multivariate_normal(np.zeros((sample_size, 1)).ravel(), K5, size=5)
-gauss_samples2 = np.random.multivariate_normal(np.zeros((sample_size, 1)).ravel(), K2, size=5)
-
-plt.figure(figsize=(17,6))
-plt.plot(gauss_samples5.T)
-plt.title("Samples from Multivariate Normal $\sigma$ = 5")
-plt.show()
-plt.figure(figsize=(17,6))
-plt.plot(gauss_samples2.T)
-plt.title("Samples from Multivariate Normal $\sigma$ = 2")
+gauss_samples = np.random.multivariate_normal(np.zeros((sample_size, 1)).ravel(), K, size=5)
+plt.plot(gauss_samples.T)
+plt.title("Samples from Multivariate Normal")
+plt.xlim([0, sample_size])
 plt.show()
 ```
 
 
-![png](/SVM_files/SVM_1_0.png?raw=true)
+![png](/SVM_files/Figure_1.png?raw=true)
 
 
 
-![png](/SVM_files/SVM_1_1.png?raw=true)
+![png](/SVM_files/Figure_2.png?raw=true)
 
 ## Decisions. Optimal Separating Hyperplane
 
