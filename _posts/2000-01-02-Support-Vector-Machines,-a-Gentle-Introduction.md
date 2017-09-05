@@ -86,7 +86,7 @@ Let's make an example where we draw samples from a gaussian process with the squ
 import numpy as np
 import matplotlib.pyplot as plt
 
-sample_size = 200
+sample_size = 400
 x_test = np.linspace(-50, 50, sample_size)
 
 
@@ -107,11 +107,20 @@ def kernel_matrix(x1, x2, L, s):
     K[triu] = K.T[triu]
     return K
 
-K = kernel_matrix(np.asarray(x_test), np.asarray(x_test), 6, .05)
+K2 = kernel_matrix(np.asarray(x_test), np.asarray(x_test), 2, .05)
+K6 = kernel_matrix(np.asarray(x_test), np.asarray(x_test), 5, .05)
+
 
 # Sample from the multivariate normal process with mean zero and cov=K
-gauss_samples = np.random.multivariate_normal(np.zeros((sample_size, 1)).ravel(), K, size=5)
-plt.plot(gauss_samples.T)
+gauss_samples2 = np.random.multivariate_normal(np.zeros((sample_size, 1)).ravel(), K2, size=5)
+gauss_samples5 = np.random.multivariate_normal(np.zeros((sample_size, 1)).ravel(), K6, size=5)
+
+plt.figure(figsize=(17, 6))
+plt.plot(gauss_samples2.T)
+plt.title("Samples from Multivariate Normal")
+plt.xlim([0, sample_size])
+plt.figure(figsize=(17, 6))
+plt.plot(gauss_samples5.T)
 plt.title("Samples from Multivariate Normal")
 plt.xlim([0, sample_size])
 plt.show()
