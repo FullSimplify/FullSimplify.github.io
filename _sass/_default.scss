@@ -8,6 +8,7 @@ body {
     background-color: #ebeef0;
 
 }
+/*
 .border
 {
     z-index:-1;
@@ -23,6 +24,7 @@ border
     color: $iron;
 	height:100%;
 }
+*/
 a {
     //color: #45565c;
 	color: black;
@@ -158,6 +160,8 @@ margin-bottom: 10px;
     margin-bottom: 20px; 
     padding: 20px;
 }
+
+/*
 .border
 {
     z-index:-1;
@@ -165,6 +169,8 @@ margin-bottom: 10px;
     border-width: 22px;
     height:100%;
 }
+*/
+
 .header {
     //overflow: hidden;
     font-family: 'Dancing Script';
@@ -245,7 +251,9 @@ margin-bottom: 10px;
 
 .page-title__text {
     font-weight: 700;
-    font-size: 70px;
+    font-size: 25px;
+	border-bottom: solid 1px;
+	border-color: #03aadc
 	color:  black;
 	font-family:'Encode Sans', sans-serif;
 }
@@ -267,11 +275,11 @@ margin-bottom: 10px;
 }
 
 .post-title__text {
-    font-size: 70px;
+    font-size: 25px;
 }
 
 .post-title__subtitle {
-    font-size: 20px;
+    font-size: 25px;
 }
 
 /* =Post teasers */
